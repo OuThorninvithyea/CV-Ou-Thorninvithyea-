@@ -4,28 +4,28 @@ import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
 
 const Education = () => {
   const education = [
+    // {
+    //   degree: "Master of Computer Science",
+    //   institution: "Stanford University",
+    //   location: "Stanford, CA",
+    //   period: "2017 - 2019",
+    //   gpa: "3.8/4.0",
+    //   description:
+    //     "Specialized in Software Engineering and Artificial Intelligence. Completed advanced coursework in algorithms, machine learning, and distributed systems.",
+    //   courses: [
+    //     "Advanced Algorithms",
+    //     "Machine Learning",
+    //     "Distributed Systems",
+    //     "Software Architecture",
+    //   ],
+    //   achievements: [
+    //     "Dean's List",
+    //     "Graduate Research Assistant",
+    //     "Published 2 Research Papers",
+    //   ],
+    // },
     {
-      degree: "Master of Computer Science",
-      institution: "Stanford University",
-      location: "Stanford, CA",
-      period: "2017 - 2019",
-      gpa: "3.8/4.0",
-      description:
-        "Specialized in Software Engineering and Artificial Intelligence. Completed advanced coursework in algorithms, machine learning, and distributed systems.",
-      courses: [
-        "Advanced Algorithms",
-        "Machine Learning",
-        "Distributed Systems",
-        "Software Architecture",
-      ],
-      achievements: [
-        "Dean's List",
-        "Graduate Research Assistant",
-        "Published 2 Research Papers",
-      ],
-    },
-    {
-      degree: "Bachelor of Science in Computer Science",
+      degree: "Software Engineering",
       institution: "University of California, Berkeley",
       location: "Berkeley, CA",
       period: "2013 - 2017",
