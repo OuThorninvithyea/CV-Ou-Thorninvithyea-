@@ -48,28 +48,28 @@ const Experience = () => {
         "Git",
       ],
     },
-    {
-      title: "Junior Software Developer",
-      company: "StartupXYZ",
-      location: "Austin, TX",
-      period: "2019 - 2020",
-      description:
-        "Started career in a fast-paced startup environment, contributing to various projects and learning modern development practices.",
-      achievements: [
-        "Contributed to frontend development using React and JavaScript",
-        "Assisted in database design and backend API development",
-        "Participated in code reviews and learned best practices",
-        "Supported deployment and maintenance of web applications",
-      ],
-      technologies: [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "MySQL",
-        "HTML/CSS",
-        "Bootstrap",
-      ],
-    },
+    // {
+    //   title: "Junior Software Developer",
+    //   company: "StartupXYZ",
+    //   location: "Austin, TX",
+    //   period: "2019 - 2020",
+    //   description:
+    //     "Started career in a fast-paced startup environment, contributing to various projects and learning modern development practices.",
+    //   achievements: [
+    //     "Contributed to frontend development using React and JavaScript",
+    //     "Assisted in database design and backend API development",
+    //     "Participated in code reviews and learned best practices",
+    //     "Supported deployment and maintenance of web applications",
+    //   ],
+    //   technologies: [
+    //     "JavaScript",
+    //     "React",
+    //     "Node.js",
+    //     "MySQL",
+    //     "HTML/CSS",
+    //     "Bootstrap",
+    //   ],
+    // },
   ];
 
   return (
