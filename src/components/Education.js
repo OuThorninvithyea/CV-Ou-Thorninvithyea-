@@ -25,23 +25,21 @@ const Education = () => {
     //   ],
     // },
     {
-      degree: "Software Engineering",
-      institution: "University of California, Berkeley",
-      location: "Berkeley, CA",
-      period: "2013 - 2017",
-      gpa: "3.7/4.0",
+      degree: "Bachelor of Software Engineering",
+      institution: "Limkokwing University",
+      location: "Phnom Penh, Cambodia",
+      period: "",
+      gpa: "",
       description:
-        "Strong foundation in computer science fundamentals with focus on software development and data structures.",
+        "Majoring in Software Engineering with a strong focus on front-end development, UI engineering, and modern web technologies.",
       courses: [
-        "Data Structures",
-        "Computer Networks",
-        "Database Systems",
+        "Software Engineering",
         "Web Development",
+        "Human-Computer Interaction",
+        "Data Structures & Algorithms",
       ],
       achievements: [
-        "Magna Cum Laude",
-        "ACM Programming Contest Finalist",
-        "CS Tutoring Program",
+        "",
       ],
     },
   ];
