@@ -272,18 +272,20 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <a
-                href="#"
+              <button
+                type="button"
                 className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"
+                aria-label="GitHub"
               >
                 <Github size={24} />
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
+                type="button"
                 className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
-              </a>
+              </button>
               <a
                 href="mailto:Vithyeass@gmail.com"
                 className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"

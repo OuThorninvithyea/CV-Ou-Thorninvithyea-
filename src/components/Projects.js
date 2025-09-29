@@ -156,20 +156,48 @@ const Projects = () => {
 
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                    <a
-                      href={project.github}
-                      className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 text-xs sm:text-sm font-medium"
-                    >
-                      <Github size={14} />
-                      Code
-                    </a>
-                    <a
-                      href={project.demo}
-                      className={`flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r ${project.gradient} text-black rounded-lg hover:shadow-lg transition-all duration-200 text-xs sm:text-sm font-medium`}
-                    >
-                      <ExternalLink size={14} />
-                      Demo
-                    </a>
+                    {project.github && project.github !== "#" ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 text-xs sm:text-sm font-medium"
+                      >
+                        <Github size={14} />
+                        Code
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-black/60 text-white rounded-lg cursor-not-allowed text-xs sm:text-sm font-medium"
+                        aria-disabled="true"
+                        title="Code link unavailable"
+                      >
+                        <Github size={14} />
+                        Code
+                      </button>
+                    )}
+                    {project.demo && project.demo !== "#" ? (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r ${project.gradient} text-black rounded-lg hover:shadow-lg transition-all duration-200 text-xs sm:text-sm font-medium`}
+                      >
+                        <ExternalLink size={14} />
+                        Demo
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        className={`flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r ${project.gradient} text-black/70 rounded-lg cursor-not-allowed text-xs sm:text-sm font-medium`}
+                        aria-disabled="true"
+                        title="Demo link unavailable"
+                      >
+                        <ExternalLink size={14} />
+                        Demo
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -185,13 +213,14 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <a
-            href="#"
+          <button
+            type="button"
             className="inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+            aria-label="View All Projects on GitHub"
           >
             <Github size={20} />
             View All Projects on GitHub
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>
