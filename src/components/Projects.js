@@ -7,10 +7,10 @@ const Projects = () => {
     {
       title: "E-Commerce Platform",
       description:
-        "Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.",
+        "Front-end e-commerce experience with real-time inventory views, seamless checkout UI, and admin analytics dashboard.",
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Stripe", "Vite"],
       features: [
         "Real-time inventory tracking",
         "Secure payment processing",
@@ -28,13 +28,7 @@ const Projects = () => {
         "Collaborative project management tool with real-time updates, team collaboration features, and advanced analytics.",
       image:
         "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: [
-        "React",
-        "TypeScript",
-        "Socket.io",
-        "PostgreSQL",
-        "Docker",
-      ],
+      technologies: ["React", "TypeScript", "Zustand", "Tailwind CSS", "Vite"],
       features: [
         "Real-time collaboration",
         "Advanced project analytics",
@@ -52,7 +46,7 @@ const Projects = () => {
         "Interactive dashboard for data visualization and analytics with real-time data processing and custom reporting.",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["React", "D3.js", "Python", "FastAPI", "Redis"],
+      technologies: ["React", "D3.js", "Recharts", "Tailwind CSS", "Vite"],
       features: [
         "Interactive data visualization",
         "Real-time data processing",

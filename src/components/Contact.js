@@ -44,15 +44,15 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+855 11 423 735",
+      link: "tel:+85511423735",
       gradient: "from-gray-400 to-gray-600",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "San Francisco, CA",
-      link: "#",
+      value: "Phnom Penh, Cambodia",
+      link: "https://maps.google.com/?q=Phnom+Penh,+Cambodia",
       gradient: "from-gray-500 to-gray-700",
     },
   ];
@@ -280,7 +280,7 @@ const Contact = () => {
           className="text-center mt-20 pt-8 border-t border-white/20"
         >
           <p className="text-gray-400">
-            © 2024 Your Name. Built with React and Tailwind CSS.
+            © 2024 Outhorninvithyea. Built with React and Tailwind CSS.
             <span className="text-blue-400"> Made with ❤️</span>
           </p>
         </motion.div>

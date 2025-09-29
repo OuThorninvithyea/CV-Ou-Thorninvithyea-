@@ -37,7 +37,7 @@ const Hero = () => {
     doc.setTextColor(100, 100, 100);
     doc.text("Software Engineer", 20, 40);
     doc.text(
-      "Vithyeass@gmail.com | +1 (555) 123-4567 | San Francisco, CA",
+      "Vithyeass@gmail.com | +855 11 423 735 | Phnom Penh, Cambodia",
       20,
       46
     );
@@ -50,7 +50,7 @@ const Hero = () => {
     doc.setFontSize(10);
     doc.setTextColor(60, 60, 60);
     const summaryText =
-      "Passionate Software Engineer with 5+ years of experience in full-stack development. Specialized in React, Node.js, and cloud technologies. I thrive on solving complex problems and creating efficient, scalable solutions that drive business growth.";
+      "Passionate Software Engineer with 5+ years of experience in front-end development. Specialized in React, TypeScript, and modern UI engineering. I thrive on crafting accessible, performant interfaces that delight users and drive business growth.";
     doc.text(summaryText, 20, 70, { maxWidth: 170 });
 
     // Skills
@@ -66,16 +66,20 @@ const Hero = () => {
       110
     );
     doc.text(
-      "Backend: Node.js, Express.js, Python, RESTful APIs, GraphQL, Microservices",
+      "UI Engineering: Accessibility (a11y), Design Systems, Animations (Framer Motion)",
       20,
       116
     );
     doc.text(
-      "Database & Cloud: MongoDB, PostgreSQL, AWS, Docker, Kubernetes, Redis",
+      "Testing & Performance: RTL/Jest, Cypress, Lighthouse, Web Vitals (LCP/CLS/INP)",
       20,
       122
     );
-    doc.text("Tools: Git, CI/CD, Jest, Webpack, Linux, Agile/Scrum", 20, 128);
+    doc.text(
+      "Tooling: Git/GitHub, Vite/Webpack, ESLint/Prettier, CI/CD, Figma to Code",
+      20,
+      128
+    );
 
     // Experience
     doc.setFontSize(16);
@@ -109,10 +113,10 @@ const Hero = () => {
       179
     );
 
-    // Full Stack Developer
+    // Front-End Developer
     doc.setFontSize(12);
     doc.setTextColor(37, 99, 235);
-    doc.text("Full Stack Developer", 20, 195);
+    doc.text("Front-End Developer", 20, 195);
     doc.setFontSize(10);
     doc.setTextColor(60, 60, 60);
     doc.text("Digital Innovations LLC | New York, NY | 2020 - 2022", 20, 201);
@@ -139,36 +143,21 @@ const Hero = () => {
 
     doc.setFontSize(12);
     doc.setTextColor(37, 99, 235);
-    doc.text("Master of Computer Science", 20, 250);
+    doc.text("Bachelor of Software Engineering", 20, 250);
     doc.setFontSize(10);
     doc.setTextColor(60, 60, 60);
-    doc.text(
-      "Stanford University | Stanford, CA | 2017 - 2019 | GPA: 3.8/4.0",
-      20,
-      256
-    );
-
-    doc.setFontSize(12);
-    doc.setTextColor(37, 99, 235);
-    doc.text("Bachelor of Science in Computer Science", 20, 270);
-    doc.setFontSize(10);
-    doc.setTextColor(60, 60, 60);
-    doc.text(
-      "University of California, Berkeley | Berkeley, CA | 2013 - 2017 | GPA: 3.7/4.0",
-      20,
-      276
-    );
+    doc.text("Limkokwing University", 20, 256);
 
     // Save the PDF
-    doc.save("CV_YourName.pdf");
+    doc.save("CV_OuThorninvithyea.pdf");
   };
 
   const cards = [
     {
       icon: <Code className="w-8 h-8" />,
-      title: "Full Stack Developer",
+      title: "Front-End Developer",
       description:
-        "Building scalable web applications with modern technologies",
+        "Building performant, accessible, and responsive user interfaces",
       gradient: "from-white to-gray-300",
       delay: 0.1,
     },
