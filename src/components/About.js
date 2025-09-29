@@ -57,25 +57,24 @@ const About = () => {
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Passionate Software Engineer with 5+ years of experience in
-                  full-stack development. Specialized in React, Node.js, and
-                  cloud technologies. I thrive on solving complex problems and
-                  creating efficient, scalable solutions that drive business
-                  growth.
+                  front-end development. Specialized in React, TypeScript, and
+                  modern UI engineering. I focus on accessibility, performance,
+                  and delivering delightful user experiences.
                 </p>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  My expertise spans across frontend frameworks, backend
-                  architectures, database design, and DevOps practices. I'm
-                  committed to writing clean, maintainable code and staying
-                  updated with the latest technology trends.
+                  My expertise centers on design systems, component
+                  architecture, accessibility (WCAG), responsive design, and Web
+                  Vitals optimization. I'm committed to clean, maintainable code
+                  and modern web standards.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {[
                     "React",
-                    "Node.js",
                     "TypeScript",
-                    "AWS",
-                    "Docker",
-                    "MongoDB",
+                    "Tailwind CSS",
+                    "Framer Motion",
+                    "Redux/Zustand",
+                    "ESLint/Prettier",
                   ].map((tech, index) => (
                     <span
                       key={index}
