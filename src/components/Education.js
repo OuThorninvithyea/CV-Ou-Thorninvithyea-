@@ -46,32 +46,40 @@ const Education = () => {
 
   const certifications = [
     {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
+      name: "JavaScript Master Certificate",
+      issuer: "Udemy",
+      date: "2024",
+      description:
+        "Mastery program covering modern JavaScript (ES6+), asynchronous patterns, modules, tooling, and best practices.",
+      icon: <Award className="w-5 h-5" />,
+      gradient: "from-yellow-400 to-amber-500",
+    },
+    {
+      name: "Figma UI/UX Design Certificate",
+      issuer: "Udemy",
       date: "2023",
-      icon: <Award className="w-5 h-5" />,
-      gradient: "from-orange-500 to-red-400",
-    },
-    {
-      name: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      date: "2022",
-      icon: <Award className="w-5 h-5" />,
-      gradient: "from-blue-500 to-cyan-400",
-    },
-    {
-      name: "Certified Kubernetes Administrator",
-      issuer: "Cloud Native Computing Foundation",
-      date: "2022",
+      description:
+        "Hands-on training in Figma for wireframes, design systems, components, and developer handoff.",
       icon: <Award className="w-5 h-5" />,
       gradient: "from-purple-500 to-pink-400",
     },
     {
-      name: "MongoDB Certified Developer",
-      issuer: "MongoDB University",
-      date: "2021",
+      name: "Data Structures Master Certificate",
+      issuer: "Udemy",
+      date: "2023",
+      description:
+        "In-depth course on arrays, hash tables, stacks, queues, trees, and graphs with Big-O analysis.",
       icon: <Award className="w-5 h-5" />,
       gradient: "from-green-500 to-emerald-400",
+    },
+    {
+      name: "Next.js Certificate",
+      issuer: "Udemy",
+      date: "2024",
+      description:
+        "Building production-grade React apps with Next.js, routing, data fetching, performance, and deployment.",
+      icon: <Award className="w-5 h-5" />,
+      gradient: "from-sky-500 to-blue-400",
     },
   ];
 
@@ -208,6 +216,11 @@ const Education = () => {
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">{cert.name}</h4>
                 <p className="text-gray-600 mb-2">{cert.issuer}</p>
+                {cert.description && (
+                  <p className="text-gray-600 mb-3 text-sm leading-relaxed">
+                    {cert.description}
+                  </p>
+                )}
                 <span className="inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-medium">
                   {cert.date}
                 </span>
