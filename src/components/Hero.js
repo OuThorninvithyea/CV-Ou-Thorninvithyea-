@@ -9,7 +9,6 @@ import {
   Zap,
   Globe,
 } from "lucide-react";
-import jsPDF from "jspdf";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -21,136 +20,6 @@ const Hero = () => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
-
-  const downloadCV = () => {
-    const doc = new jsPDF();
-
-    // Set font and colors
-    doc.setFont("helvetica");
-
-    // Header
-    doc.setFontSize(24);
-    doc.setTextColor(37, 99, 235); // Blue color
-    doc.text("Ou Thorninvithyea", 20, 30);
-
-    doc.setFontSize(12);
-    doc.setTextColor(100, 100, 100);
-    doc.text("Software Engineer", 20, 40);
-    doc.text(
-      "Vithyeass@gmail.com | +855 11 423 735 | Phnom Penh, Cambodia",
-      20,
-      46
-    );
-
-    // Professional Summary
-    doc.setFontSize(16);
-    doc.setTextColor(0, 0, 0);
-    doc.text("Professional Summary", 20, 60);
-
-    doc.setFontSize(10);
-    doc.setTextColor(60, 60, 60);
-    const summaryText =
-      "Passionate Software Engineer with 5+ years of experience in front-end development. Specialized in React, TypeScript, and modern UI engineering. I thrive on crafting accessible, performant interfaces that delight users and drive business growth.";
-    doc.text(summaryText, 20, 70, { maxWidth: 170 });
-
-    // Skills
-    doc.setFontSize(16);
-    doc.setTextColor(0, 0, 0);
-    doc.text("Technical Skills", 20, 100);
-
-    doc.setFontSize(10);
-    doc.setTextColor(60, 60, 60);
-    doc.text(
-      "Frontend: React, TypeScript, JavaScript, HTML/CSS, Tailwind CSS, Next.js",
-      20,
-      110
-    );
-    doc.text(
-      "UI Engineering: Accessibility (a11y), Design Systems, Animations (Framer Motion)",
-      20,
-      116
-    );
-    doc.text(
-      "Testing & Performance: RTL/Jest, Cypress, Lighthouse, Web Vitals (LCP/CLS/INP)",
-      20,
-      122
-    );
-    doc.text(
-      "Tooling: Git/GitHub, Vite/Webpack, ESLint/Prettier, CI/CD, Figma to Code",
-      20,
-      128
-    );
-
-    // Experience
-    doc.setFontSize(16);
-    doc.setTextColor(0, 0, 0);
-    doc.text("Work Experience", 20, 145);
-
-    // Senior Software Engineer
-    doc.setFontSize(12);
-    doc.setTextColor(37, 99, 235);
-    doc.text("Senior Software Engineer", 20, 155);
-    doc.setFontSize(10);
-    doc.setTextColor(60, 60, 60);
-    doc.text(
-      "Tech Solutions Inc. | San Francisco, CA | 2022 - Present",
-      20,
-      161
-    );
-    doc.text(
-      "• Led development of scalable web applications serving 100K+ users",
-      20,
-      167
-    );
-    doc.text(
-      "• Implemented microservices architecture and improved system performance by 40%",
-      20,
-      173
-    );
-    doc.text(
-      "• Mentored junior developers and established code review processes",
-      20,
-      179
-    );
-
-    // Front-End Developer
-    doc.setFontSize(12);
-    doc.setTextColor(37, 99, 235);
-    doc.text("Front-End Developer", 20, 195);
-    doc.setFontSize(10);
-    doc.setTextColor(60, 60, 60);
-    doc.text("Digital Innovations LLC | New York, NY | 2020 - 2022", 20, 201);
-    doc.text(
-      "• Built responsive web applications with React and TypeScript",
-      20,
-      207
-    );
-    doc.text(
-      "• Designed RESTful APIs and integrated third-party services",
-      20,
-      213
-    );
-    doc.text(
-      "• Improved application performance through code optimization",
-      20,
-      219
-    );
-
-    // Education
-    doc.setFontSize(16);
-    doc.setTextColor(0, 0, 0);
-    doc.text("Education", 20, 240);
-
-    doc.setFontSize(12);
-    doc.setTextColor(37, 99, 235);
-    doc.text("Bachelor of Software Engineering", 20, 250);
-    doc.setFontSize(10);
-    doc.setTextColor(60, 60, 60);
-    doc.text("Limkokwing University", 20, 256);
-
-    // Save the PDF
-    doc.save("CV_OuThorninvithyea.pdf");
-  };
 
   const cards = [
     {
@@ -238,13 +107,14 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <button
-                onClick={downloadCV}
+              <a
+                href="/CV_OuThorninvithyea.pdf"
+                download
                 className="hidden sm:flex items-center justify-center gap-2 bg-white text-black px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
               >
                 <Download size={18} />
                 Download CV
-              </button>
+              </a>
               <a
                 href="mailto:Vithyeass@gmail.com"
                 className="flex items-center justify-center gap-2 border-2 border-white text-white px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
