@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Resume from "./Resume";
 import {
   Github,
   Linkedin,
@@ -35,14 +36,18 @@ const Hero = () => {
   const exportResumePdf = async () => {
     try {
       setIsExporting(true);
-      const aboutSection = document.querySelector("#about");
-      if (!aboutSection) {
+      const target =
+        document.querySelector("#resume-print") ||
+        document.querySelector("#about");
+      if (!target) {
         setIsExporting(false);
         return;
       }
 
       // Ensure the section is in view so framer-motion "whileInView" content is rendered
-      aboutSection.scrollIntoView({ behavior: "instant", block: "start" });
+      if (target.id !== "resume-print") {
+        target.scrollIntoView({ behavior: "instant", block: "start" });
+      }
 
       // Temporarily disable animations/transitions to avoid blank renders
       const restoreAnimations = disableAnimationsTemporarily();
@@ -56,7 +61,7 @@ const Hero = () => {
       ]);
       const html2canvas = html2canvasModule.default;
 
-      const canvas = await html2canvas(aboutSection, {
+      const canvas = await html2canvas(target, {
         scale: 2,
         useCORS: true,
         backgroundColor: "#ffffff",
@@ -261,6 +266,11 @@ const Hero = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Off-screen printable resume (no Work Experience) */}
+      <div id="resume-print" className="fixed -left-[9999px] top-0">
+        <Resume />
       </div>
 
       {/* Scroll indicator */}
