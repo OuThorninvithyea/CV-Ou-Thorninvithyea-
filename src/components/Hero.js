@@ -12,6 +12,7 @@ import {
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isExporting, setIsExporting] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -20,6 +21,57 @@ const Hero = () => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  const exportResumePdf = async () => {
+    try {
+      setIsExporting(true);
+      const aboutSection = document.querySelector("#about");
+      if (!aboutSection) {
+        setIsExporting(false);
+        return;
+      }
+
+      const [{ jsPDF }, html2canvasModule] = await Promise.all([
+        import("jspdf"),
+        import("html2canvas"),
+      ]);
+      const html2canvas = html2canvasModule.default;
+
+      const canvas = await html2canvas(aboutSection, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: "#ffffff",
+        windowWidth: document.documentElement.clientWidth,
+      });
+
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+
+      const imgWidth = pageWidth;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      pdf.save("CV_OuThorninvithyea.pdf");
+    } catch (error) {
+      // Silently fail to avoid UX disruption; optionally log to analytics
+    } finally {
+      setIsExporting(false);
+    }
+  };
 
   const cards = [
     {
@@ -107,14 +159,14 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <a
-                href="/CV_OuThorninvithyea.pdf"
-                download
-                className="hidden sm:flex items-center justify-center gap-2 bg-white text-black px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+              <button
+                onClick={exportResumePdf}
+                disabled={isExporting}
+                className="hidden sm:flex items-center justify-center gap-2 bg-white text-black px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <Download size={18} />
-                Download CV
-              </a>
+                {isExporting ? "Preparing..." : "Download CV"}
+              </button>
               <a
                 href="mailto:Vithyeass@gmail.com"
                 className="flex items-center justify-center gap-2 border-2 border-white text-white px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
