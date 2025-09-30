@@ -65,8 +65,8 @@ const Hero = () => {
         scale: 2,
         useCORS: true,
         backgroundColor: "#ffffff",
-        windowWidth: document.documentElement.clientWidth,
-        scrollY: -window.scrollY,
+        windowWidth: 794,
+        windowHeight: 1123,
       });
 
       const imgData = canvas.toDataURL("image/png");
@@ -269,7 +269,10 @@ const Hero = () => {
       </div>
 
       {/* Off-screen printable resume (no Work Experience) */}
-      <div id="resume-print" className="fixed -left-[9999px] top-0">
+      <div
+        id="resume-print"
+        style={{ position: "absolute", left: -10000, top: 0 }}
+      >
         <Resume />
       </div>
 
