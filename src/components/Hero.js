@@ -22,6 +22,16 @@ const Hero = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  const disableAnimationsTemporarily = () => {
+    const style = document.createElement("style");
+    style.setAttribute("data-capture-style", "true");
+    style.innerHTML = `* { animation: none !important; transition: none !important; }`;
+    document.head.appendChild(style);
+    return () => {
+      style.remove();
+    };
+  };
+
   const exportResumePdf = async () => {
     try {
       setIsExporting(true);
@@ -30,6 +40,15 @@ const Hero = () => {
         setIsExporting(false);
         return;
       }
+
+      // Ensure the section is in view so framer-motion "whileInView" content is rendered
+      aboutSection.scrollIntoView({ behavior: "instant", block: "start" });
+
+      // Temporarily disable animations/transitions to avoid blank renders
+      const restoreAnimations = disableAnimationsTemporarily();
+
+      // Wait a tick for layout/paint before capturing
+      await new Promise((resolve) => setTimeout(resolve, 400));
 
       const [{ jsPDF }, html2canvasModule] = await Promise.all([
         import("jspdf"),
@@ -42,6 +61,7 @@ const Hero = () => {
         useCORS: true,
         backgroundColor: "#ffffff",
         windowWidth: document.documentElement.clientWidth,
+        scrollY: -window.scrollY,
       });
 
       const imgData = canvas.toDataURL("image/png");
@@ -69,6 +89,11 @@ const Hero = () => {
     } catch (error) {
       // Silently fail to avoid UX disruption; optionally log to analytics
     } finally {
+      // Restore animations regardless of success/failure
+      const styleTag = document.querySelector(
+        "style[data-capture-style='true']"
+      );
+      if (styleTag) styleTag.remove();
       setIsExporting(false);
     }
   };
