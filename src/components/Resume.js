@@ -45,8 +45,8 @@ const Resume = React.forwardRef((props, ref) => {
           className="text-gray-700"
           style={{ fontSize: "11px", textAlign: "justify" }}
         >
-          Passionate Software Engineer with 5+ years of experience in front-end
-          development, specializing in React, TypeScript, and modern UI
+          Passionate Software Engineer with 2+ years of experience in front-end
+          development, specializing in React, JavaScript, and modern UI
           engineering. Expert in crafting accessible, performant interfaces that
           deliver exceptional user experiences and drive business growth.
           Committed to clean code, modern web standards, and continuous learning
