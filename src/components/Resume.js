@@ -93,7 +93,7 @@ const Resume = React.forwardRef((props, ref) => {
               Testing & Performance
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              Jest, React Testing Cypress, Lighthouse, Optimization
+              React Testing Cypress, Lighthouse, Optimization
             </p>
           </div>
           <div>
