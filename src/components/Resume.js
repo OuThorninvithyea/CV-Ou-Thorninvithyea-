@@ -71,8 +71,7 @@ const Resume = React.forwardRef((props, ref) => {
               Frontend Development
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Next.js,
-              Vue.js
+              React,JavaScript, HTML5, CSS3, Tailwind CSS, Next.js
             </p>
           </div>
           <div>
@@ -83,8 +82,7 @@ const Resume = React.forwardRef((props, ref) => {
               UI/UX Engineering
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              Accessibility (WCAG), Design Systems, Framer Motion, Responsive
-              Design
+              Accessibility, Design Systems, Framer Motion, Responsive Design
             </p>
           </div>
           <div>
@@ -95,8 +93,7 @@ const Resume = React.forwardRef((props, ref) => {
               Testing & Performance
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              Jest, React Testing Library, Cypress, Lighthouse, Web Vitals
-              Optimization
+              Jest, React Testing Cypress, Lighthouse, Optimization
             </p>
           </div>
           <div>
@@ -107,7 +104,7 @@ const Resume = React.forwardRef((props, ref) => {
               Tools & Technologies
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              Git/GitHub, Vite, Webpack, ESLint, Prettier, CI/CD, Figma
+              Git/GitHub, Prettier, CI/CD, Figma
             </p>
           </div>
         </div>
