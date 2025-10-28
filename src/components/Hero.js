@@ -50,7 +50,7 @@ const Hero = () => {
       }
 
       // Temporarily disable animations/transitions to avoid blank renders
-      const restoreAnimations = disableAnimationsTemporarily();
+      disableAnimationsTemporarily();
 
       // Wait a tick for layout/paint before capturing
       await new Promise((resolve) => setTimeout(resolve, 400));
@@ -106,7 +106,7 @@ const Hero = () => {
   const cards = [
     {
       icon: <Code className="w-8 h-8" />,
-      title: "Front-End Developer",
+      title: "Software Engineer",
       description:
         "Building performant, accessible, and responsive user interfaces",
       gradient: "from-white to-gray-300",
@@ -121,8 +121,9 @@ const Hero = () => {
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "Open Source Contributor",
-      description: "Contributing to the developer community",
+      title: "Web Developer",
+      description:
+        "Creating modern web solutions with cutting-edge technologies",
       gradient: "from-white to-gray-400",
       delay: 0.5,
     },

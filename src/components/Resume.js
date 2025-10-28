@@ -45,12 +45,15 @@ const Resume = React.forwardRef((props, ref) => {
           className="text-gray-700"
           style={{ fontSize: "11px", textAlign: "justify" }}
         >
-          Passionate Software Engineer with 2+ years of experience in front-end
-          development, specializing in React, JavaScript, and modern UI
-          engineering. Expert in crafting accessible, performant interfaces that
-          deliver exceptional user experiences and drive business growth.
-          Committed to clean code, modern web standards, and continuous learning
-          in the ever-evolving tech landscape.
+          Passionate Software Engineer with 2+ years of experience in full-stack
+          web development, specializing in designing, developing, and
+          maintaining scalable web applications. Proficient in React,
+          JavaScript, and modern frameworks with expertise in writing clean,
+          maintainable code, debugging complex issues, and collaborating with
+          cross-functional teams. Strong foundation in software development
+          lifecycle, version control, testing, and deployment. Committed to
+          continuous learning and staying current with emerging technologies and
+          industry best practices.
         </p>
       </section>
 
@@ -68,10 +71,10 @@ const Resume = React.forwardRef((props, ref) => {
               className="font-semibold text-gray-800 mb-1"
               style={{ fontSize: "12px", fontWeight: "600" }}
             >
-              Frontend Development
+              Programming Languages
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              React,JavaScript, HTML5, CSS3, Tailwind CSS, Next.js
+              JavaScript, HTML5, CSS3, TypeScript
             </p>
           </div>
           <div>
@@ -79,10 +82,10 @@ const Resume = React.forwardRef((props, ref) => {
               className="font-semibold text-gray-800 mb-1"
               style={{ fontSize: "12px", fontWeight: "600" }}
             >
-              UI/UX Engineering
+              Frameworks & Libraries
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              Accessibility, Design Systems, Framer Motion, Responsive Design
+              React, Next.js, Tailwind CSS, Node.js
             </p>
           </div>
           <div>
@@ -90,10 +93,10 @@ const Resume = React.forwardRef((props, ref) => {
               className="font-semibold text-gray-800 mb-1"
               style={{ fontSize: "12px", fontWeight: "600" }}
             >
-              Testing & Performance
+              Software Engineering
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              React Testing Cypress, Lighthouse, Optimization
+              Problem Solving, Debugging, Data Structures, Design Patterns
             </p>
           </div>
           <div>
@@ -101,41 +104,97 @@ const Resume = React.forwardRef((props, ref) => {
               className="font-semibold text-gray-800 mb-1"
               style={{ fontSize: "12px", fontWeight: "600" }}
             >
-              Tools & Technologies
+              Development Tools
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              Git/GitHub, Prettier, CI/CD, Figma
+              Git/GitHub, VS Code, Chrome DevTools, NPM, ESLint
             </p>
           </div>
         </div>
       </section>
 
-      {/* Key Achievements */}
+      {/* Professional Experience */}
       <section className="mb-6">
         <h2
           className="text-lg font-bold text-blue-600 mb-3 border-b border-gray-300 pb-1"
           style={{ fontSize: "14px", fontWeight: "bold" }}
         >
-          KEY ACHIEVEMENTS
+          PROFESSIONAL EXPERIENCE
         </h2>
-        <ul
-          className="list-disc list-inside text-gray-700 space-y-1"
-          style={{ fontSize: "10px" }}
-        >
-          <li>
-            Successfully deploy and maintain multiple websites and web
-            applications
-          </li>
-          <li>Continuously improve website performance and user experience</li>
-          <li>
-            Implement new features and functionality based on client
-            requirements
-          </li>
-          <li>Troubleshoot and fix bugs to ensure smooth website operation</li>
-          <li>
-            Keep websites updated with latest technologies and security patches
-          </li>
-        </ul>
+        <div className="mb-4">
+          <div className="flex justify-between items-start mb-1">
+            <h3
+              className="font-semibold text-gray-800"
+              style={{ fontSize: "12px", fontWeight: "600" }}
+            >
+              Software Engineer
+            </h3>
+            <p className="text-gray-600" style={{ fontSize: "10px" }}>
+              2023 - Present
+            </p>
+          </div>
+          <p className="text-gray-600 mb-1" style={{ fontSize: "10px" }}>
+            Tech Innovators • Phnom Penh, Cambodia
+          </p>
+          <ul
+            className="list-disc list-inside text-gray-700 space-y-0.5 ml-2"
+            style={{ fontSize: "9px" }}
+          >
+            <li>
+              Design and develop responsive web applications using React and
+              modern JavaScript frameworks
+            </li>
+            <li>
+              Write clean, maintainable code following best practices and coding
+              standards
+            </li>
+            <li>
+              Debug and troubleshoot software defects to ensure optimal
+              performance
+            </li>
+            <li>
+              Collaborate with teams to gather requirements and deliver
+              solutions
+            </li>
+            <li>
+              Conduct code reviews and implement automated testing using Git
+              version control
+            </li>
+          </ul>
+        </div>
+        <div className="mb-4">
+          <div className="flex justify-between items-start mb-1">
+            <h3
+              className="font-semibold text-gray-800"
+              style={{ fontSize: "12px", fontWeight: "600" }}
+            >
+              Junior Front-End Developer
+            </h3>
+            <p className="text-gray-600" style={{ fontSize: "10px" }}>
+              2022 - 2023
+            </p>
+          </div>
+          <p className="text-gray-600 mb-1" style={{ fontSize: "10px" }}>
+            Digital Solutions Cambodia • Phnom Penh, Cambodia
+          </p>
+          <ul
+            className="list-disc list-inside text-gray-700 space-y-0.5 ml-2"
+            style={{ fontSize: "9px" }}
+          >
+            <li>
+              Developed reusable UI components and integrated APIs for web
+              applications
+            </li>
+            <li>
+              Participated in agile development with daily standups and sprint
+              planning
+            </li>
+            <li>
+              Fixed bugs and optimized code to improve application performance
+            </li>
+            <li>Learned software engineering principles and design patterns</li>
+          </ul>
+        </div>
       </section>
 
       {/* Education */}

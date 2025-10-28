@@ -5,17 +5,17 @@ import { ExternalLink, Github, Code, Zap, Database } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "E-Commerce Web Application",
       description:
-        "Front-end e-commerce experience with real-time inventory views, seamless checkout UI, and admin analytics dashboard.",
+        "Full-featured e-commerce platform with product catalog, shopping cart, checkout system, and admin dashboard. Implemented RESTful API integration and payment processing.",
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Stripe", "Vite"],
+      technologies: ["React", "JavaScript", "Tailwind CSS", "REST API", "Git"],
       features: [
-        "Real-time inventory tracking",
-        "Secure payment processing",
-        "Admin analytics dashboard",
-        "Mobile-responsive design",
+        "Product catalog with search and filtering",
+        "Shopping cart with state management",
+        "User authentication and authorization",
+        "Responsive design for all devices",
       ],
       github: "#",
       demo: "#",
@@ -23,17 +23,17 @@ const Projects = () => {
       gradient: "from-gray-300 to-gray-500",
     },
     {
-      title: "Task Management System",
+      title: "Task Management Application",
       description:
-        "Collaborative project management tool with real-time updates, team collaboration features, and advanced analytics.",
+        "Project management tool for tracking tasks and team collaboration. Built with React, implemented CRUD operations, and integrated with backend API for data persistence.",
       image:
         "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Zustand", "Tailwind CSS", "Vite"],
+      technologies: ["React", "JavaScript", "CSS3", "REST API", "Git"],
       features: [
-        "Real-time collaboration",
-        "Advanced project analytics",
-        "Team permission management",
-        "Automated reporting",
+        "Create, read, update, delete tasks",
+        "User authentication and sessions",
+        "Team collaboration features",
+        "Drag-and-drop task organization",
       ],
       github: "#",
       demo: "#",
@@ -41,17 +41,17 @@ const Projects = () => {
       gradient: "from-gray-400 to-gray-600",
     },
     {
-      title: "Data Analytics Dashboard",
+      title: "Portfolio Website with CMS",
       description:
-        "Interactive dashboard for data visualization and analytics with real-time data processing and custom reporting.",
+        "Personal portfolio website with content management system. Developed responsive UI, implemented dynamic routing, and integrated database for blog posts and project showcases.",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["React", "D3.js", "Recharts", "Tailwind CSS", "Vite"],
+      technologies: ["React", "JavaScript", "Tailwind CSS", "Next.js", "Git"],
       features: [
-        "Interactive data visualization",
-        "Real-time data processing",
-        "Custom report generation",
-        "API integration",
+        "Dynamic content management",
+        "Blog with markdown support",
+        "Contact form with validation",
+        "SEO optimization",
       ],
       github: "#",
       demo: "#",

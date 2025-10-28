@@ -6,12 +6,12 @@ const About = () => {
   const stats = [
     {
       icon: <Coffee className="w-6 h-6" />,
-      number: "5+",
+      number: "2+",
       label: "Years Experience",
     },
     {
       icon: <Award className="w-6 h-6" />,
-      number: "50+",
+      number: "15+",
       label: "Projects Completed",
     },
     {
@@ -21,7 +21,7 @@ const About = () => {
     },
     {
       icon: <User className="w-6 h-6" />,
-      number: "10+",
+      number: "5+",
       label: "Team Collaborations",
     },
   ];
@@ -56,16 +56,20 @@ const About = () => {
                   Professional Summary
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Passionate Software Engineer with 5+ years of experience in
-                  front-end development. Specialized in React, TypeScript, and
-                  modern UI engineering. I focus on accessibility, performance,
-                  and delivering delightful user experiences.
+                  Passionate Software Engineer with 2+ years of experience in
+                  designing, developing, and maintaining web applications. I
+                  specialize in React and JavaScript, with strong skills in
+                  problem-solving, debugging, and software architecture. My work
+                  involves writing clean code, conducting code reviews, and
+                  collaborating with teams to deliver scalable solutions.
                 </p>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  My expertise centers on design systems, component
-                  architecture, accessibility (WCAG), responsive design, and Web
-                  Vitals optimization. I'm committed to clean, maintainable code
-                  and modern web standards.
+                  My expertise includes full software development lifecycle,
+                  from requirements gathering and system design to
+                  implementation, testing, and deployment. I work with version
+                  control systems, participate in agile methodologies, optimize
+                  application performance, and continuously learn new
+                  technologies to stay current in the field.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {[
