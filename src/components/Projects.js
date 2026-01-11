@@ -207,14 +207,16 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <button
-            type="button"
+          <a
+            href="https://github.com/OuThorninvithyea?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
             aria-label="View All Projects on GitHub"
           >
             <Github size={20} />
             View All Projects on GitHub
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
