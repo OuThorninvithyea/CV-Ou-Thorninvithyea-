@@ -37,8 +37,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "Vithyeass@gmail.com",
-      link: "mailto:Vithyeass@gmail.com",
+      value: "Vithyeasa@gmail.com",
+      link: "mailto:Vithyeasa@gmail.com",
       gradient: "from-gray-300 to-gray-500",
     },
     {
@@ -61,7 +61,7 @@ const Contact = () => {
     {
       icon: <Github className="w-6 h-6" />,
       name: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/OuThorninvithyea?tab=repositories",
       gradient: "from-gray-700 to-gray-900",
     },
     {

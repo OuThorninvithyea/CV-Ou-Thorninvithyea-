@@ -180,8 +180,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Passionate Software Engineer crafting innovative solutions with
-              cutting-edge technologies
+              Passionate Software Engineer with 2+ years of experience in
+              front-end development, specializing in React, JavaScript, and
+              modern UI engineering.
             </motion.p>
 
             <motion.div
@@ -199,7 +200,7 @@ const Hero = () => {
                 {isExporting ? "Preparing..." : "Download CV"}
               </button>
               <a
-                href="mailto:Vithyeass@gmail.com"
+                href="mailto:Vithyeasa@gmail.com"
                 className="flex items-center justify-center gap-2 border-2 border-white text-white px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
                 role="button"
               >
@@ -214,13 +215,15 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <button
-                type="button"
+              <a
+                href="https://github.com/OuThorninvithyea?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"
                 aria-label="GitHub"
               >
                 <Github size={24} />
-              </button>
+              </a>
               <button
                 type="button"
                 className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"
@@ -229,7 +232,7 @@ const Hero = () => {
                 <Linkedin size={24} />
               </button>
               <a
-                href="mailto:Vithyeass@gmail.com"
+                href="mailto:Vithyeasa@gmail.com"
                 className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"
               >
                 <Mail size={24} />

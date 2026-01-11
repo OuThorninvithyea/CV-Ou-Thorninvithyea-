@@ -57,11 +57,12 @@ const About = () => {
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Passionate Software Engineer with 2+ years of experience in
-                  designing, developing, and maintaining web applications. I
-                  specialize in React and JavaScript, with strong skills in
-                  problem-solving, debugging, and software architecture. My work
-                  involves writing clean code, conducting code reviews, and
-                  collaborating with teams to deliver scalable solutions.
+                  front-end development, specializing in React, JavaScript, and
+                  modern UI engineering. Expert in crafting accessible,
+                  performant interfaces that deliver exceptional user
+                  experiences and drive business growth. Committed to clean
+                  code, modern web standards, and continuous learning in the
+                  ever-evolving tech landscape.
                 </p>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   My expertise includes full software development lifecycle,
