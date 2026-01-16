@@ -7,17 +7,26 @@ const Projects = () => {
     {
       title: "HappyHourHunt",
       description:
-        "Premium nightlife discovery platform for Phnom Penh. Real-time access to happy hour deals, venue pricing, and vibrant social spots with interactive maps.",
+        "Premium nightlife discovery platform for Phnom Penh. Features a real-time 'Swarm Map', custom data pipelines for venue scraping, and a high-performance universal UI.",
       video: "/NightLifeapp.MP4",
-      technologies: ["React Native", "Expo", "Firebase", "Next.js", "Tamagui"],
+      technologies: [
+        "React Native",
+        "Expo",
+        "Firebase",
+        "Tamagui",
+        "Google Maps",
+      ],
       features: [
-        "Interactive Swarm Map",
-        "Try on Expo Go (Scan QR)",
-        "Precision Geolocation",
-        "Sleek Onboarding Flow",
+        "🌍 Web Version: Instant browser access",
+        "📱 Mobile Demo: Android & iOS via Expo Go",
+        "🔍 Real-time venue discovery map",
+        "✨ Premium dark-mode optimized UI",
       ],
       github: "#",
-      demo: "https://expo.dev/@cheashawn/projects/happyhourhunt",
+      webDemo: "https://happyhourhunt.expo.app",
+      mobileDemo: "https://expo.dev/@cheashawn/happyhourhunt",
+      instructions:
+        "Install Expo Go, open the Mobile link, and scan the QR code.",
       icon: <Zap className="w-6 h-6" />,
       gradient: "from-purple-500 to-pink-600",
     },
@@ -39,7 +48,7 @@ const Projects = () => {
         "Performance Optimized",
       ],
       github: "#",
-      demo: "#",
+      webDemo: "https://anatomyclub.store/",
       icon: <Zap className="w-6 h-6" />,
       gradient: "from-blue-400 to-indigo-600",
     },
@@ -198,9 +207,21 @@ const Projects = () => {
                     </div>
                   </div>
 
+                  {/* Instructions if available */}
+                  {project.instructions && (
+                    <div className="mb-6 p-3 bg-blue-50 border border-blue-100 rounded-lg">
+                      <p className="text-xs text-blue-800 leading-relaxed font-medium">
+                        <span className="font-bold underline decoration-blue-300">
+                          How to try it:
+                        </span>{" "}
+                        {project.instructions}
+                      </p>
+                    </div>
+                  )}
+
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                    {project.github && project.github !== "#" ? (
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {project.github && project.github !== "#" && (
                       <a
                         href={project.github}
                         target="_blank"
@@ -210,38 +231,59 @@ const Projects = () => {
                         <Github size={14} />
                         Code
                       </a>
-                    ) : (
-                      <button
-                        type="button"
-                        className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-black/60 text-white rounded-lg cursor-not-allowed text-xs sm:text-sm font-medium"
-                        aria-disabled="true"
-                        title="Code link unavailable"
-                      >
-                        <Github size={14} />
-                        Code
-                      </button>
                     )}
-                    {project.demo && project.demo !== "#" ? (
+
+                    {project.webDemo && (
                       <a
-                        href={project.demo}
+                        href={project.webDemo}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r ${project.gradient} text-black rounded-lg hover:shadow-lg transition-all duration-200 text-xs sm:text-sm font-medium`}
                       >
                         <ExternalLink size={14} />
-                        Demo
+                        Web Demo
                       </a>
-                    ) : (
-                      <button
-                        type="button"
-                        className={`flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r ${project.gradient} text-black/70 rounded-lg cursor-not-allowed text-xs sm:text-sm font-medium`}
-                        aria-disabled="true"
-                        title="Demo link unavailable"
+                    )}
+
+                    {project.mobileDemo && (
+                      <a
+                        href={project.mobileDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 transition-all duration-200 text-xs sm:text-sm font-medium border border-gray-200`}
                       >
                         <ExternalLink size={14} />
-                        Demo
-                      </button>
+                        Mobile App
+                      </a>
                     )}
+
+                    {!project.webDemo &&
+                      !project.mobileDemo &&
+                      project.demo &&
+                      project.demo !== "#" && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r ${project.gradient} text-black rounded-lg hover:shadow-lg transition-all duration-200 text-xs sm:text-sm font-medium`}
+                        >
+                          <ExternalLink size={14} />
+                          Demo
+                        </a>
+                      )}
+
+                    {(!project.github || project.github === "#") &&
+                      !project.webDemo &&
+                      !project.mobileDemo &&
+                      (!project.demo || project.demo === "#") && (
+                        <button
+                          type="button"
+                          className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gray-100 text-gray-400 rounded-lg cursor-not-allowed text-xs sm:text-sm font-medium"
+                          aria-disabled="true"
+                        >
+                          Coming Soon
+                        </button>
+                      )}
                   </div>
                 </div>
               </div>
