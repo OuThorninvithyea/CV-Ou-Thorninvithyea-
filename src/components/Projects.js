@@ -5,6 +5,45 @@ import { ExternalLink, Github, Code, Zap, Database } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "HappyHourHunt",
+      description:
+        "Premium nightlife discovery platform for Phnom Penh. Real-time access to happy hour deals, venue pricing, and vibrant social spots with interactive maps.",
+      video: "/NightLifeapp.MP4",
+      technologies: ["React Native", "Expo", "Firebase", "Next.js", "Tamagui"],
+      features: [
+        "Interactive Swarm Map",
+        "Try on Expo Go (Scan QR)",
+        "Precision Geolocation",
+        "Sleek Onboarding Flow",
+      ],
+      github: "#",
+      demo: "https://expo.dev/@cheashawn/projects/happyhourhunt",
+      icon: <Zap className="w-6 h-6" />,
+      gradient: "from-purple-500 to-pink-600",
+    },
+    {
+      title: "Interactive Web Experience",
+      description:
+        "A premium, motion-rich web experience showcasing advanced frontend animations and interactive design patterns.",
+      video: "/MockUpvideo3.mp4",
+      technologies: [
+        "React",
+        "Framer Motion",
+        "Tailwind CSS",
+        "Video Integration",
+      ],
+      features: [
+        "Advanced Animations",
+        "Smooth Transitions",
+        "Interactive UI",
+        "Performance Optimized",
+      ],
+      github: "#",
+      demo: "#",
+      icon: <Zap className="w-6 h-6" />,
+      gradient: "from-blue-400 to-indigo-600",
+    },
+    {
       title: "ANATOMY",
       description:
         "Timeless fashion for the modern individual. Quality craftsmanship meets contemporary design. A premium e-commerce experience.",
@@ -93,13 +132,24 @@ const Projects = () => {
               ></div>
 
               <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200">
-                {/* Project Image */}
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                {/* Project Image/Video */}
+                <div className="relative overflow-hidden aspect-video">
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-2 sm:top-4 left-2 sm:left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div
