@@ -36,13 +36,24 @@ const Skills = () => {
       ],
     },
     {
+      title: "AI & MLOps",
+      gradient: "from-indigo-500 to-purple-600",
+      skills: [
+        { name: "LLM Integration", level: 85 },
+        { name: "Prompt Engineering", level: 90 },
+        { name: "RAG Pipelines", level: 80 },
+        { name: "Model Fine-tuning", level: 75 },
+      ],
+    },
+    {
       title: "Tools & Technologies",
       gradient: "from-gray-500 to-gray-700",
       skills: [
         { name: "Git / GitHub", level: 85 },
-        { name: "Prettier", level: 90 },
-        { name: "VS Code", level: 90 },
-        { name: "NPM", level: 85 },
+        { name: "Cursor & Warp", level: 95 },
+        { name: "Gemini / OpenAI", level: 90 },
+        { name: "Figma Make", level: 80 },
+        { name: "Antigravity", level: 75 },
       ],
     },
   ];
@@ -58,7 +69,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
-            Technical Skills
+            Technical Skills (2026 Era)
           </h2>
           <div className="w-20 h-1 bg-black mx-auto"></div>
         </motion.div>
@@ -132,20 +143,20 @@ const Skills = () => {
           className="mt-16 text-center"
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-8">
-            Additional Competencies
+            Future-Ready Competencies
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "Software Development",
-              "Web Development",
-              "Database Design",
-              "Performance Optimization",
-              "Code Refactoring",
-              "Debugging & Troubleshooting",
-              "Unit Testing",
-              "Cross-Browser Compatibility",
-              "Technical Documentation",
-              "Continuous Learning",
+              "AI Model Integration",
+              "Automated Testing (ML)",
+              "Predictive Analytics",
+              "AI Ethical Guidelines",
+              "Data Governance",
+              "MLOps Lifecycle",
+              "Explainable AI (XAI)",
+              "Model Drift Monitoring",
+              "Sentiment Analysis (NLP)",
+              "CI/CD for AI Models",
             ].map((skill, index) => (
               <motion.span
                 key={index}

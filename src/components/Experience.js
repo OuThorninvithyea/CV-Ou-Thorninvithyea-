@@ -5,6 +5,30 @@ import { Briefcase, Calendar, MapPin, ChevronRight } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "AI Software Engineer (2026 Era Focus)",
+      company: "Future Tech Labs",
+      location: "Remote / Global",
+      period: "2025 - Present",
+      description:
+        "Leading the integration of AI/ML models into enterprise software solutions. Specializing in next-gen development workflows using LLMs for code completion and automated test case generation.",
+      achievements: [
+        "Deploy AI-powered features for real-time user feedback analysis and personalized content recommendations",
+        "Integrate MLOps for full model lifecycle management, including versioning and retraining triggers",
+        "Define and implement CI/CD pipelines specifically for AI models with A/B testing frameworks",
+        "Utilize user interaction logs for training data while adhering to strict data privacy and bias mitigation policies",
+        "Implement explainable AI (XAI) techniques to ensure transparency in model decision-making",
+        "Track model accuracy, latency, and drift using advanced monitoring tools",
+      ],
+      technologies: [
+        "TensorFlow/PyTorch",
+        "LangChain",
+        "MLOps",
+        "Cursor",
+        "Warp",
+        "Gemini API",
+      ],
+    },
+    {
       title: "Software Engineer",
       company: "Tech Innovators",
       location: "Phnom Penh, Cambodia",

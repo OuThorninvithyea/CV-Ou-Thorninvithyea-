@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,10 +29,34 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    const publicKey = "ZX2tDAn5vuhmoKseQ";
+    const serviceID = "service_26o9zrp";
+    const templateID = "template_igrqkvo";
+
+    // Map form data to standard EmailJS template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      reply_to: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      to_name: "Ou Thorninvithyea",
+    };
+
+    emailjs
+      .send(serviceID, templateID, templateParams, publicKey)
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully!");
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          alert(`Failed to send message: ${error.text || "Unknown error"}`);
+        }
+      );
   };
 
   const contactInfo = [
@@ -180,7 +206,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label

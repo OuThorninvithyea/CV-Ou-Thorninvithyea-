@@ -72,6 +72,22 @@ const About = () => {
                   application performance, and continuously learn new
                   technologies to stay current in the field.
                 </p>
+                <div className="mb-6 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                  <h4 className="font-bold text-gray-900 mb-2">
+                    Engineering in the AI Era (2026)
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Embracing the future of software engineering, I integrate
+                    AI/ML models to enhance code generation and automate
+                    complex testing workflows. My approach includes deploying
+                    LLMs for code completion, utilizing predictive analytics
+                    for performance optimization, and implementing strict AI
+                    ethical guidelines. I focus on MLOps for model lifecycle
+                    management, establishing robust CI/CD pipelines for AI
+                    models, and ensuring explainable AI (XAI) with strict data
+                    governance and drift monitoring.
+                  </p>
+                </div>
                 <div className="flex flex-wrap gap-3">
                   {[
                     "React",
