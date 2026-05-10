@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { navItems } from "../../data/navigation";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,15 +33,6 @@ const Navigation = () => {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
-
-  const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Education", href: "#education" },
-    { name: "Contact", href: "#contact" },
-  ];
 
   const handleNavClick = (href) => {
     setIsOpen(false);

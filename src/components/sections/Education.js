@@ -1,85 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
+import { education, certifications } from "../../data/education";
 
 const Education = () => {
-  const education = [
-    // {
-    //   degree: "Master of Computer Science",
-    //   institution: "Stanford University",
-    //   location: "Stanford, CA",
-    //   period: "2017 - 2019",
-    //   gpa: "3.8/4.0",
-    //   description:
-    //     "Specialized in Software Engineering and Artificial Intelligence. Completed advanced coursework in algorithms, machine learning, and distributed systems.",
-    //   courses: [
-    //     "Advanced Algorithms",
-    //     "Machine Learning",
-    //     "Distributed Systems",
-    //     "Software Architecture",
-    //   ],
-    //   achievements: [
-    //     "Dean's List",
-    //     "Graduate Research Assistant",
-    //     "Published 2 Research Papers",
-    //   ],
-    // },
-    {
-      degree: "Bachelor of Software Engineering",
-      institution: "Limkokwing University",
-      location: "Phnom Penh, Cambodia",
-      period: "2024 - 2027",
-      gpa: "3.5",
-      description:
-        "Majoring in Software Engineering with a strong focus on front-end development, UI engineering, and modern web technologies.",
-      courses: [
-        "Software Engineering",
-        "Web Development",
-        "Human-Computer Interaction",
-        "Data Structures & Algorithms",
-      ],
-      achievements: [],
-    },
-  ];
-
-  const certifications = [
-    {
-      name: "JavaScript Master Certificate",
-      issuer: "Udemy",
-      date: "2025",
-      description:
-        "Mastery program covering modern JavaScript (ES6+), asynchronous patterns, modules, tooling, and best practices.",
-      icon: <Award className="w-5 h-5" />,
-      gradient: "from-yellow-400 to-amber-500",
-    },
-    {
-      name: "Figma UI/UX Design Certificate",
-      issuer: "Udemy",
-      date: "2024",
-      description:
-        "Hands-on training in Figma for wireframes, design systems, components, and developer handoff.",
-      icon: <Award className="w-5 h-5" />,
-      gradient: "from-purple-500 to-pink-400",
-    },
-    {
-      name: "Data Structures Master Certificate",
-      issuer: "Udemy",
-      date: "2025",
-      description:
-        "In-depth course on arrays, hash tables, stacks, queues, trees, and graphs with Big-O analysis.",
-      icon: <Award className="w-5 h-5" />,
-      gradient: "from-green-500 to-emerald-400",
-    },
-    {
-      name: "React Developer Certificate",
-      issuer: "Udemy",
-      date: "2025",
-      description:
-        "Building production-grade React apps with Next.js, routing, data fetching, performance, and deployment.",
-      icon: <Award className="w-5 h-5" />,
-      gradient: "from-sky-500 to-blue-400",
-    },
-  ];
 
   return (
     <section id="education" className="py-20 bg-white">

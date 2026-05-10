@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Resume from "./Resume";
+import Resume from "../shared/Resume";
 import {
   Github,
   Linkedin,
@@ -10,6 +10,7 @@ import {
   Zap,
   Globe,
 } from "lucide-react";
+import { exportResumePdf } from "../../utils/pdfExport";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -22,86 +23,6 @@ const Hero = () => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
-
-  const disableAnimationsTemporarily = () => {
-    const style = document.createElement("style");
-    style.setAttribute("data-capture-style", "true");
-    style.innerHTML = `* { animation: none !important; transition: none !important; }`;
-    document.head.appendChild(style);
-    return () => {
-      style.remove();
-    };
-  };
-
-  const exportResumePdf = async () => {
-    try {
-      setIsExporting(true);
-      const target =
-        document.querySelector("#resume-print") ||
-        document.querySelector("#about");
-      if (!target) {
-        setIsExporting(false);
-        return;
-      }
-
-      // Ensure the section is in view so framer-motion "whileInView" content is rendered
-      if (target.id !== "resume-print") {
-        target.scrollIntoView({ behavior: "instant", block: "start" });
-      }
-
-      // Temporarily disable animations/transitions to avoid blank renders
-      disableAnimationsTemporarily();
-
-      // Wait a tick for layout/paint before capturing
-      await new Promise((resolve) => setTimeout(resolve, 400));
-
-      const [{ jsPDF }, html2canvasModule] = await Promise.all([
-        import("jspdf"),
-        import("html2canvas"),
-      ]);
-      const html2canvas = html2canvasModule.default;
-
-      const canvas = await html2canvas(target, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: "#ffffff",
-        windowWidth: 794,
-        windowHeight: 1123,
-      });
-
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
-      const pageWidth = pdf.internal.pageSize.getWidth();
-      const pageHeight = pdf.internal.pageSize.getHeight();
-
-      const imgWidth = pageWidth;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-      }
-
-      pdf.save("CV_OuThorninvithyea.pdf");
-    } catch (error) {
-      // Silently fail to avoid UX disruption; optionally log to analytics
-    } finally {
-      // Restore animations regardless of success/failure
-      const styleTag = document.querySelector(
-        "style[data-capture-style='true']"
-      );
-      if (styleTag) styleTag.remove();
-      setIsExporting(false);
-    }
-  };
 
   const cards = [
     {
@@ -192,7 +113,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <button
-                onClick={exportResumePdf}
+                onClick={() => exportResumePdf(setIsExporting)}
                 disabled={isExporting}
                 className="hidden sm:flex items-center justify-center gap-2 bg-white text-black px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base disabled:opacity-60 disabled:cursor-not-allowed"
               >

@@ -10,6 +10,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
+import { EMAILJS_CONFIG } from "../../config/emailjs";
 
 const Contact = () => {
   const form = useRef();
@@ -30,9 +31,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const publicKey = "ZX2tDAn5vuhmoKseQ";
-    const serviceID = "service_26o9zrp";
-    const templateID = "template_igrqkvo";
+    const { publicKey, serviceID, templateID } = EMAILJS_CONFIG;
 
     // Map form data to standard EmailJS template parameters
     const templateParams = {
