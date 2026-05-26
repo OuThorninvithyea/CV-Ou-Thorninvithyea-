@@ -46,14 +46,14 @@ const Resume = React.forwardRef((props, ref) => {
           style={{ fontSize: "11px", textAlign: "justify" }}
         >
           Passionate Software Engineer with 2+ years of experience in full-stack
-          web development, specializing in designing, developing, and
-          maintaining scalable web applications. Proficient in React,
-          JavaScript, and modern frameworks with expertise in writing clean,
-          maintainable code, debugging complex issues, and collaborating with
-          cross-functional teams. Strong foundation in software development
-          lifecycle, version control, testing, and deployment. Committed to
-          continuous learning and staying current with emerging technologies and
-          industry best practices.
+          web development, specializing in building scalable web applications
+          with React, Go, and Laravel. Proficient in modern frontend frameworks
+          and backend API development with Fiber, with expertise in writing
+          clean, maintainable code, designing REST APIs, debugging complex
+          issues, and collaborating with cross-functional teams. Strong
+          foundation in software development lifecycle, version control,
+          testing, and deployment. Committed to continuous learning and staying
+          current with emerging technologies and industry best practices.
         </p>
       </section>
 
@@ -74,7 +74,7 @@ const Resume = React.forwardRef((props, ref) => {
               Programming Languages
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              JavaScript, HTML5, CSS3, TypeScript
+              Go, JavaScript, HTML5, CSS3, TypeScript
             </p>
           </div>
           <div>
@@ -85,7 +85,18 @@ const Resume = React.forwardRef((props, ref) => {
               Frameworks & Libraries
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              React, Next.js, Tailwind CSS, Node.js
+              React, Next.js, Laravel, Fiber, Tailwind CSS, Node.js
+            </p>
+          </div>
+          <div>
+            <h3
+              className="font-semibold text-gray-800 mb-1"
+              style={{ fontSize: "12px", fontWeight: "600" }}
+            >
+              Backend & Databases
+            </h3>
+            <p className="text-gray-700" style={{ fontSize: "10px" }}>
+              REST APIs, PostgreSQL, MySQL, API Design, Authentication
             </p>
           </div>
           <div>

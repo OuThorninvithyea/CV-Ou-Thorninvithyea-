@@ -1,5 +1,17 @@
 export const skillCategories = [
   {
+    title: "Backend Development",
+    gradient: "from-amber-400 to-orange-600",
+    skills: [
+      { name: "Go", level: 85 },
+      { name: "Laravel", level: 80 },
+      { name: "Fiber (Go Web)", level: 80 },
+      { name: "REST API Design", level: 85 },
+      { name: "PostgreSQL", level: 75 },
+      { name: "MySQL", level: 75 },
+    ],
+  },
+  {
     title: "Frontend Development",
     gradient: "from-blue-400 to-blue-600",
     skills: [

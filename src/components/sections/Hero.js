@@ -1,216 +1,98 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Resume from "../shared/Resume";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Download,
-  Code,
-  Zap,
-  Globe,
-} from "lucide-react";
+import { Github, Linkedin, Mail, Download, Code, Zap, Globe, ChevronDown } from "lucide-react";
 import { exportResumePdf } from "../../utils/pdfExport";
 
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isExporting, setIsExporting] = useState(false);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   const cards = [
-    {
-      icon: <Code className="w-8 h-8" />,
-      title: "Software Engineer",
-      description:
-        "Building performant, accessible, and responsive user interfaces",
-      gradient: "from-white to-gray-300",
-      delay: 0.1,
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Performance Optimizer",
-      description: "Optimizing applications for speed and efficiency",
-      gradient: "from-gray-300 to-white",
-      delay: 0.3,
-    },
-    {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Web Developer",
-      description:
-        "Creating modern web solutions with cutting-edge technologies",
-      gradient: "from-white to-gray-400",
-      delay: 0.5,
-    },
+    { icon: <Code className="w-6 h-6" />, title: "Software Engineer", description: "Building performant, accessible, and responsive user interfaces", delay: 0.1 },
+    { icon: <Zap className="w-6 h-6" />, title: "Performance Optimizer", description: "Optimizing applications for speed and efficiency", delay: 0.3 },
+    { icon: <Globe className="w-6 h-6" />, title: "Web Developer", description: "Creating modern web solutions with cutting-edge technologies", delay: 0.5 },
   ];
 
   return (
-    <section
-      id="hero"
-      className="min-h-screen relative overflow-hidden bg-black pt-20"
-    >
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse-slow"
-          style={{ animationDelay: "1s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white/5 rounded-full blur-3xl animate-pulse-slow"
-          style={{ animationDelay: "2s" }}
-        ></div>
-      </div>
+    <section id="hero" className="relative min-h-screen overflow-hidden bg-black">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-[128px] animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-[128px] animate-pulse-slow" style={{ animationDelay: "1.5s" }} />
 
-      {/* Mouse follower effect */}
-      <div
-        className="absolute pointer-events-none z-10 w-64 h-64 bg-white/10 rounded-full blur-3xl transition-all duration-1000 ease-out"
-        style={{
-          left: mousePosition.x - 128,
-          top: mousePosition.y - 128,
-        }}
-      />
-
-      <div className="relative z-20 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          {/* Main content */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 text-white px-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Ou Thorninvithyea
-            </motion.h1>
-
-            <motion.p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto px-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Passionate Software Engineer with 2+ years of experience in
-              front-end development, specializing in React, JavaScript, and
-              modern UI engineering.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 md:mb-12 px-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <button
-                onClick={() => exportResumePdf(setIsExporting)}
-                disabled={isExporting}
-                className="hidden sm:flex items-center justify-center gap-2 bg-white text-black px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                <Download size={18} />
-                {isExporting ? "Preparing..." : "Download CV"}
-              </button>
-              <a
-                href="mailto:Vithyeasa@gmail.com"
-                className="flex items-center justify-center gap-2 border-2 border-white text-white px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
-                role="button"
-              >
-                <Mail size={18} />
-                Get In Touch
-              </a>
-            </motion.div>
-
-            <motion.div
-              className="flex justify-center gap-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <a
-                href="https://github.com/OuThorninvithyea?tab=repositories"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"
-                aria-label="GitHub"
-              >
-                <Github size={24} />
-              </a>
-              <button
-                type="button"
-                className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} />
-              </button>
-              <a
-                href="mailto:Vithyeasa@gmail.com"
-                className="text-white/70 hover:text-white transition-colors duration-300 transform hover:scale-110"
-              >
-                <Mail size={24} />
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Animated Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-4">
-            {cards.map((card, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: card.delay }}
-                whileHover={{ y: -10, scale: 1.05 }}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-xl" />
-
-                <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 lg:p-8 hover:bg-white/15 transition-all duration-300">
-                  <div
-                    className={`inline-flex p-2 sm:p-3 rounded-xl bg-gradient-to-r ${card.gradient} text-black mb-3 sm:mb-4`}
-                  >
-                    {card.icon}
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
-                    {card.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm sm:text-base">
-                    {card.description}
-                  </p>
-                </div>
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-20">
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center overflow-hidden">
+            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="text-center lg:text-left min-w-0">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm text-gray-300 mb-8">
+                <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" /><span className="relative inline-flex h-2 w-2 rounded-full bg-white" /></span>
+                Available for opportunities
               </motion.div>
-            ))}
+
+              <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 tracking-tight" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+                Ou Thorninvithyea
+              </motion.h1>
+
+              <motion.p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+                Passionate Software Engineer with 2+ years of experience in front-end development, specializing in React, Go, Laravel, and modern UI engineering.
+              </motion.p>
+
+              <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}>
+                <button onClick={() => exportResumePdf(setIsExporting)} disabled={isExporting} className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-200 transition-all text-sm sm:text-base">
+                  <Download size={18} />{isExporting ? "Preparing..." : "Download CV"}
+                </button>
+                <a href="mailto:Vithyeasa@gmail.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/10 transition-all text-sm sm:text-base">
+                  <Mail size={18} />Get In Touch
+                </a>
+              </motion.div>
+
+              <motion.div className="flex items-center gap-4 justify-center lg:justify-start" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.8 }}>
+                <span className="text-gray-500 text-sm font-medium">Connect</span>
+                <div className="h-px w-8 bg-gray-700" />
+                {[{ icon: <Github size={20} />, href: "https://github.com/OuThorninvithyea?tab=repositories", label: "GitHub" }, { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" }, { icon: <Mail size={20} />, href: "mailto:Vithyeasa@gmail.com", label: "Email" }].map((s, i) => (
+                  <motion.a key={i} href={s.href} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.1, y: -2 }} className="p-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-400 hover:text-white transition-all" aria-label={s.label}>{s.icon}</motion.a>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="hidden lg:block min-w-0">
+              <div className="grid gap-4">
+                {cards.map((card, index) => (
+                  <motion.div key={index} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.4 + index * 0.15 }} whileHover={{ x: 8 }} className="group relative">
+                    <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl" />
+                    <div className="relative flex items-center gap-5 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.07] hover:border-white/[0.15] transition-all duration-500">
+                      <div className="flex-shrink-0 p-3 rounded-xl bg-white text-black shadow-lg">{card.icon}</div>
+                      <div><h3 className="text-lg font-semibold text-white mb-1">{card.title}</h3><p className="text-sm text-gray-400">{card.description}</p></div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Off-screen printable resume (no Work Experience) */}
-      <div
-        id="resume-print"
-        style={{ position: "absolute", left: -10000, top: 0 }}
-      >
-        <Resume />
-      </div>
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-      >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"></div>
+      <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="lg:hidden px-4 sm:px-6 pb-12 -mt-8">
+        <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none">
+          {cards.map((card, index) => (
+            <motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }} className="flex-shrink-0 w-64 snap-center">
+              <div className="p-4 rounded-2xl bg-white/[0.04] border border-white/[0.08]">
+                <div className="inline-flex p-2.5 rounded-xl bg-white text-black mb-3">{card.icon}</div>
+                <h3 className="text-base font-semibold text-white mb-1">{card.title}</h3>
+                <p className="text-xs text-gray-400">{card.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
+
+      <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.5 }}>
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="flex flex-col items-center gap-2">
+          <span className="text-gray-500 text-xs font-medium">Scroll</span>
+          <ChevronDown size={16} className="text-gray-400" />
+        </motion.div>
+      </motion.div>
+
+      <div id="resume-print" style={{ position: "absolute", left: -10000, top: 0 }}><Resume /></div>
     </section>
   );
 };
