@@ -2,6 +2,29 @@ import { Code, Zap, Database } from "lucide-react";
 
 export const projects = [
   {
+    title: "bongthom Admin API",
+    description:
+      "Early-stage admin API built from the ground up with Clean Architecture principles. Features real-time WebSocket communication for live updates, a PostgreSQL-backed data layer with sqlx, and comprehensive i18n/localization via go-i18n \u2014 laying a scalable foundation for production backend systems.",
+    technologies: [
+      "Go",
+      "Fiber v3",
+      "PostgreSQL",
+      "WebSocket",
+      "go-i18n",
+      "sqlx",
+      "zerolog",
+    ],
+    features: [
+      "Clean Architecture (layered)",
+      "Real-time WebSocket events",
+      "i18n multi-language support",
+      "Structured logging (zerolog)",
+    ],
+    github: "https://github.com/OuThorninvithyea/bongthom_v1",
+    icon: <Database className="w-6 h-6" />,
+    gradient: "from-emerald-400 to-teal-600",
+  },
+  {
     title: "HappyHourHunt",
     description:
       "Premium nightlife discovery platform for Phnom Penh. Features a real-time 'Swarm Map', custom data pipelines for venue scraping, and a high-performance universal UI.",

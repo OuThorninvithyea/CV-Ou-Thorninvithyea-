@@ -22,8 +22,14 @@ const Projects = () => {
                 <div className="relative overflow-hidden aspect-video bg-gray-100">
                   {project.video ? (
                     <video src={project.video} autoPlay muted loop playsInline className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  ) : (
+                  ) : project.image ? (
                     <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gray-50">
+                      <div className={`flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${project.gradient} text-white`}>
+                        {project.icon}
+                      </div>
+                    </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute top-3 left-3 p-2 rounded-xl bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">{project.icon}</div>

@@ -47,9 +47,10 @@ const Resume = React.forwardRef((props, ref) => {
         >
           Passionate Software Engineer with 2+ years of experience in full-stack
           web development, specializing in building scalable web applications
-          with React, Go, and Laravel. Proficient in modern frontend frameworks
-          and backend API development with Fiber, with expertise in writing
-          clean, maintainable code, designing REST APIs, debugging complex
+          and real-time systems with React, Go, and Laravel. Proficient in
+          modern frontend frameworks and backend API development with Fiber,
+          with expertise in writing clean, maintainable code following Clean
+          Architecture principles, designing REST APIs, debugging complex
           issues, and collaborating with cross-functional teams. Strong
           foundation in software development lifecycle, version control,
           testing, and deployment. Committed to continuous learning and staying
@@ -96,7 +97,7 @@ const Resume = React.forwardRef((props, ref) => {
               Backend & Databases
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              REST APIs, PostgreSQL, MySQL, API Design, Authentication
+              REST APIs, PostgreSQL, MySQL, WebSocket, Clean Architecture, i18n, Database Design, API Design, Authentication
             </p>
           </div>
           <div>
@@ -107,7 +108,7 @@ const Resume = React.forwardRef((props, ref) => {
               Software Engineering
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              Problem Solving, Debugging, Data Structures, Design Patterns
+              Problem Solving, Debugging, Data Structures, Design Patterns, System Design, Code Review
             </p>
           </div>
           <div>
@@ -275,6 +276,82 @@ const Resume = React.forwardRef((props, ref) => {
               2025
             </span>
           </div>
+        </div>
+      </section>
+
+      {/* Key Projects */}
+      <section className="mb-6">
+        <h2
+          className="text-lg font-bold text-blue-600 mb-3 border-b border-gray-300 pb-1"
+          style={{ fontSize: "14px", fontWeight: "bold" }}
+        >
+          KEY PROJECTS
+        </h2>
+        <div className="mb-3">
+          <div className="flex justify-between items-start mb-1">
+            <h3
+              className="font-semibold text-gray-800"
+              style={{ fontSize: "12px", fontWeight: "600" }}
+            >
+              bongthom Admin API
+            </h3>
+            <p className="text-gray-600" style={{ fontSize: "10px" }}>
+              2025
+            </p>
+          </div>
+          <p className="text-gray-600 mb-1" style={{ fontSize: "10px" }}>
+            Go • Fiber v3 • PostgreSQL • WebSocket • go-i18n
+          </p>
+          <ul
+            className="list-disc list-inside text-gray-700 space-y-0.5 ml-2"
+            style={{ fontSize: "9px" }}
+          >
+            <li>
+              Built admin API with Clean Architecture (handler → usecase →
+              repository layers) for maintainable, testable code
+            </li>
+            <li>
+              Implemented real-time WebSocket communication for live dashboard
+              updates and notifications
+            </li>
+            <li>
+              Designed PostgreSQL schema with sqlx for type-safe queries and
+              efficient database operations
+            </li>
+            <li>
+              Integrated go-i18n for multi-language support (EN/KH) with
+              structured zerolog logging
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div className="flex justify-between items-start mb-1">
+            <h3
+              className="font-semibold text-gray-800"
+              style={{ fontSize: "12px", fontWeight: "600" }}
+            >
+              HappyHourHunt
+            </h3>
+            <p className="text-gray-600" style={{ fontSize: "10px" }}>
+              2024
+            </p>
+          </div>
+          <p className="text-gray-600 mb-1" style={{ fontSize: "10px" }}>
+            React Native • Expo • Firebase • Tamagui • Google Maps
+          </p>
+          <ul
+            className="list-disc list-inside text-gray-700 space-y-0.5 ml-2"
+            style={{ fontSize: "9px" }}
+          >
+            <li>
+              Premium nightlife discovery platform for Phnom Penh with real-time
+              venue swarm map
+            </li>
+            <li>
+              Built custom data pipelines for venue scraping and high-performance
+              universal UI
+            </li>
+          </ul>
         </div>
       </section>
 
