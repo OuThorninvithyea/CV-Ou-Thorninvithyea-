@@ -13,6 +13,10 @@ export const skillCategories = [
       { name: "Clean Architecture", level: 80 },
       { name: "i18n / Localization", level: 78 },
       { name: "Database Design", level: 78 },
+      { name: "JWT / Auth", level: 85 },
+      { name: "Redis", level: 80 },
+      { name: "Refresh Token", level: 82 },
+      { name: "Docker", level: 78 },
     ],
   },
   {

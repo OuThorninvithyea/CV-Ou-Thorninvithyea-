@@ -10,7 +10,7 @@ const About = () => {
     { icon: <Users className="w-5 h-5" />, number: "5+", label: "Team Collaborations" },
   ];
 
-  const techTags = ["React", "TypeScript", "Go", "Laravel", "Fiber", "REST APIs", "Tailwind CSS", "PostgreSQL"];
+  const techTags = ["React", "TypeScript", "Go", "Laravel", "Fiber", "REST APIs", "Tailwind CSS", "PostgreSQL", "JWT", "Redis", "Docker"];
 
   return (
     <section id="about" className="relative py-24 sm:py-32 bg-white overflow-hidden">

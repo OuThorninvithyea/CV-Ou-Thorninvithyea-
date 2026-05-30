@@ -97,7 +97,7 @@ const Resume = React.forwardRef((props, ref) => {
               Backend & Databases
             </h3>
             <p className="text-gray-700" style={{ fontSize: "10px" }}>
-              REST APIs, PostgreSQL, MySQL, WebSocket, Clean Architecture, i18n, Database Design, API Design, Authentication
+              REST APIs, PostgreSQL, MySQL, WebSocket, JWT, Redis, Refresh Token, Docker, Clean Architecture, i18n, Database Design, API Design, Authentication
             </p>
           </div>
           <div>
