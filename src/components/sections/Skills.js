@@ -12,9 +12,9 @@ const Skills = () => {
           <p className="text-gray-500 max-w-2xl mx-auto">Technologies and tools I work with daily to build exceptional digital experiences</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="md:columns-2 gap-5">
           {skillCategories.map((category, categoryIndex) => (
-            <motion.div key={categoryIndex} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: categoryIndex * 0.08 }} viewport={{ once: true, margin: "-50px" }} className="group">
+            <motion.div key={categoryIndex} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: categoryIndex * 0.08 }} viewport={{ once: true, margin: "-50px" }} className="group mb-5 break-inside-avoid-column">
               <div className="bg-white rounded-xl p-5 sm:p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-3 h-3 rounded-full bg-black" />

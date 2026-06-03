@@ -21,7 +21,7 @@ const Hero = () => {
 
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-20">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center overflow-hidden">
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="text-center lg:text-left min-w-0">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm text-gray-300 mb-8">
                 <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" /><span className="relative inline-flex h-2 w-2 rounded-full bg-white" /></span>
@@ -32,7 +32,7 @@ const Hero = () => {
                 Ou Thorninvithyea
               </motion.h1>
 
-              <motion.p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+              <motion.p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
                 Passionate Software Engineer with 2+ years of experience in front-end development, specializing in React, Go, Laravel, and modern UI engineering.
               </motion.p>
 
@@ -54,7 +54,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="hidden lg:block min-w-0">
+            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="hidden md:block min-w-0">
               <div className="grid gap-4">
                 {cards.map((card, index) => (
                   <motion.div key={index} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.4 + index * 0.15 }} whileHover={{ x: 8 }} className="group relative">
@@ -71,10 +71,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="lg:hidden px-4 sm:px-6 pb-12 -mt-8">
+      <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="md:hidden px-4 sm:px-6 pb-12 -mt-8">
         <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none">
           {cards.map((card, index) => (
-            <motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }} className="flex-shrink-0 w-64 snap-center">
+            <motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }} className="flex-shrink-0 w-[85vw] sm:w-80 snap-center">
               <div className="p-4 rounded-2xl bg-white/[0.04] border border-white/[0.08]">
                 <div className="inline-flex p-2.5 rounded-xl bg-white text-black mb-3">{card.icon}</div>
                 <h3 className="text-base font-semibold text-white mb-1">{card.title}</h3>

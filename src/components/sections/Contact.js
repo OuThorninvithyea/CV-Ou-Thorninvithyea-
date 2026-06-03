@@ -47,7 +47,7 @@ const Contact = () => {
           <p className="text-gray-400 max-w-2xl mx-auto">I'm always interested in new opportunities and exciting projects. Let's discuss how we can work together.</p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
             <h3 className="text-2xl font-bold text-white mb-6">Contact Info</h3>
             <div className="space-y-4 mb-10">

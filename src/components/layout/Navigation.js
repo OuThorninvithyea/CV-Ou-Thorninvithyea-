@@ -51,7 +51,7 @@ const Navigation = () => {
             </span>
           </motion.a>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item, idx) => (
               <motion.button key={item.name} onClick={() => handleNavClick(item.href)} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.05 }}
                 className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${isActive(item.href) ? "text-white" : scrolled ? "text-gray-600 hover:text-black" : "text-white/60 hover:text-white"}`}>
@@ -63,7 +63,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className={`relative z-50 p-2 rounded-full transition-all ${scrolled ? "text-black hover:bg-gray-100" : "text-white hover:bg-white/10"}`}>
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -75,7 +75,7 @@ const Navigation = () => {
         {isOpen && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" onClick={() => setIsOpen(false)} />
-            <motion.div initial={{ opacity: 0, y: -20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -20, scale: 0.95 }} className="fixed top-20 left-4 right-4 z-50">
+            <motion.div initial={{ opacity: 0, y: -20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -20, scale: 0.95 }} className="fixed top-16 sm:top-20 left-4 right-4 z-50">
               <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
                 {navItems.map((item, idx) => (
                   <motion.a key={item.name} href={item.href} onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.06 }}

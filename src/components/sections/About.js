@@ -21,8 +21,8 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-black">Who <span className="text-gray-400">I Am</span></h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="lg:col-span-3">
+        <div className="grid md:grid-cols-5 gap-10 lg:gap-16">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="md:col-span-3">
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-gray-50 rounded-2xl -z-10" />
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -44,8 +44,8 @@ const About = () => {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="lg:col-span-2">
-            <div className="grid grid-cols-2 gap-4 h-full">
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="md:col-span-2">
+            <div className="grid grid-cols-2 gap-4 md:h-full">
               {stats.map((stat, index) => (
                 <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.1 }} viewport={{ once: true }} whileHover={{ y: -4 }} className="bg-white p-5 sm:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-gray-200 transition-all flex flex-col items-center justify-center text-center">
                   <div className="w-11 h-11 rounded-xl bg-black text-white flex items-center justify-center mb-3">{stat.icon}</div>
