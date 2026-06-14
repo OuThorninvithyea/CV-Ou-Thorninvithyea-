@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, X } from "lucide-react";
 import ThemeToggle from "../shared/ThemeToggle";
+import useFocusTrap from "../../hooks/useFocusTrap";
 
 const socialLinks = [
   {
@@ -24,8 +25,10 @@ const Sidebar = ({
   onClose,
   mobile = false,
 }) => {
+  const containerRef = useFocusTrap(mobile);
+
   const content = (
-    <div className="flex flex-col h-full">
+    <div ref={containerRef} className="flex flex-col h-full">
       <div className="flex items-center justify-between px-6 py-5 border-b border-slate-200 dark:border-slate-800">
         <a
           href="#hero"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
@@ -7,8 +7,24 @@ import useScrollSpy from "../../hooks/useScrollSpy";
 
 const DocsLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const sectionIds = navItems.map((item) => item.href.replace("#", ""));
+  const sectionIds = useMemo(
+    () => navItems.map((item) => item.href.replace("#", "")),
+    []
+  );
   const activeId = useScrollSpy(sectionIds);
+
+  useEffect(() => {
+    if (!sidebarOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [sidebarOpen]);
 
   const handleNavClick = (href) => {
     setSidebarOpen(false);

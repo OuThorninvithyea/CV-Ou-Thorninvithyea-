@@ -91,12 +91,12 @@ const Skills = () => {
           Future-Ready Competencies
         </h3>
         <div className="flex flex-wrap gap-2">
-          {futureReadyCompetencies.map((skill, index) => (
+          {futureReadyCompetencies.map((skill, i) => (
             <motion.span
-              key={index}
+              key={skill}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.03 }}
+              transition={{ duration: 0.3, delay: i * 0.03 }}
               viewport={{ once: true }}
               className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-mono border border-slate-200 dark:border-slate-700"
             >

@@ -4,20 +4,20 @@ import Resume from "../shared/Resume";
 import { Github, Linkedin, Mail, Download, Code, Zap, Globe } from "lucide-react";
 import { exportResumePdf } from "../../utils/pdfExport";
 
+const HERO_CARDS = [
+  { icon: <Code className="w-5 h-5" />, title: "Software Engineer", description: "Building performant, accessible, and responsive user interfaces" },
+  { icon: <Zap className="w-5 h-5" />, title: "Performance Optimizer", description: "Optimizing applications for speed and efficiency" },
+  { icon: <Globe className="w-5 h-5" />, title: "Web Developer", description: "Creating modern web solutions with cutting-edge technologies" },
+];
+
+const HERO_SOCIAL_LINKS = [
+  { icon: <Github size={18} />, href: "https://github.com/OuThorninvithyea?tab=repositories", label: "GitHub" },
+  { icon: <Linkedin size={18} />, href: "#", label: "LinkedIn" },
+  { icon: <Mail size={18} />, href: "mailto:Vithyeasa@gmail.com", label: "Email" },
+];
+
 const Hero = () => {
   const [isExporting, setIsExporting] = useState(false);
-
-  const cards = [
-    { icon: <Code className="w-5 h-5" />, title: "Software Engineer", description: "Building performant, accessible, and responsive user interfaces" },
-    { icon: <Zap className="w-5 h-5" />, title: "Performance Optimizer", description: "Optimizing applications for speed and efficiency" },
-    { icon: <Globe className="w-5 h-5" />, title: "Web Developer", description: "Creating modern web solutions with cutting-edge technologies" },
-  ];
-
-  const socialLinks = [
-    { icon: <Github size={18} />, href: "https://github.com/OuThorninvithyea?tab=repositories", label: "GitHub" },
-    { icon: <Linkedin size={18} />, href: "#", label: "LinkedIn" },
-    { icon: <Mail size={18} />, href: "mailto:Vithyeasa@gmail.com", label: "Email" },
-  ];
 
   return (
     <section id="hero" className="relative">
@@ -56,7 +56,7 @@ const Hero = () => {
         </div>
 
         <div className="flex items-center gap-3 mb-16">
-          {socialLinks.map((social, i) => (
+          {HERO_SOCIAL_LINKS.map((social, i) => (
             <a
               key={i}
               href={social.href}
@@ -72,12 +72,12 @@ const Hero = () => {
       </motion.div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {cards.map((card, index) => (
+        {HERO_CARDS.map((card, i) => (
           <motion.div
-            key={index}
+            key={card.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
             viewport={{ once: true }}
             className="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
           >

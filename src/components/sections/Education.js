@@ -33,12 +33,12 @@ const Education = () => {
             Academic Background
           </h3>
           <div className="space-y-4">
-            {education.map((edu, index) => (
+            {education.map((edu, i) => (
               <motion.div
-                key={index}
+                key={edu.degree}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
                 className="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900"
               >
@@ -65,41 +65,43 @@ const Education = () => {
                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">
                   {edu.description}
                 </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
-                      <BookOpen className="w-4 h-4 text-slate-400" />
-                      Relevant Coursework
-                    </h5>
-                    <div className="flex flex-wrap gap-2">
-                      {edu.courses.map((course, ci) => (
+                  <div className={`grid gap-6 ${edu.achievements.length > 0 ? "md:grid-cols-2" : ""}`}>
+                    <div>
+                      <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+                        <BookOpen className="w-4 h-4 text-slate-400" />
+                        Relevant Coursework
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                      {edu.courses.map((course) => (
                         <span
-                          key={ci}
-                          className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-md text-xs font-mono border border-slate-200 dark:border-slate-700"
-                        >
-                          {course}
-                        </span>
-                      ))}
+                          key={course}
+                            className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-md text-xs font-mono border border-slate-200 dark:border-slate-700"
+                          >
+                            {course}
+                          </span>
+                        ))}
+                      </div>
                     </div>
+                    {edu.achievements.length > 0 && (
+                      <div>
+                        <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+                          <Award className="w-4 h-4 text-slate-400" />
+                          Achievements
+                        </h5>
+                        <ul className="space-y-1.5">
+                        {edu.achievements.map((a) => (
+                          <li
+                            key={a}
+                              className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-primary-500 flex-shrink-0" />
+                              {a}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
-                      <Award className="w-4 h-4 text-slate-400" />
-                      Achievements
-                    </h5>
-                    <ul className="space-y-1.5">
-                      {edu.achievements.map((a, ai) => (
-                        <li
-                          key={ai}
-                          className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary-500 flex-shrink-0" />
-                          {a}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -111,12 +113,12 @@ const Education = () => {
             Professional Certifications
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certifications.map((cert, index) => (
+            {certifications.map((cert, i) => (
               <motion.div
-                key={index}
+                key={cert.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 viewport={{ once: true }}
                 className="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-center group hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
               >

@@ -2,15 +2,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Briefcase, Award, Target, Users } from "lucide-react";
 
-const About = () => {
-  const stats = [
-    { icon: <Briefcase className="w-4 h-4" />, number: "2+", label: "Years Experience" },
-    { icon: <Award className="w-4 h-4" />, number: "15+", label: "Projects Completed" },
-    { icon: <Target className="w-4 h-4" />, number: "100%", label: "Client Satisfaction" },
-    { icon: <Users className="w-4 h-4" />, number: "5+", label: "Team Collaborations" },
-  ];
+const ABOUT_STATS = [
+  { icon: <Briefcase className="w-4 h-4" />, number: "2+", label: "Years Experience" },
+  { icon: <Award className="w-4 h-4" />, number: "15+", label: "Projects Completed" },
+  { icon: <Target className="w-4 h-4" />, number: "100%", label: "Client Satisfaction" },
+  { icon: <Users className="w-4 h-4" />, number: "5+", label: "Team Collaborations" },
+];
 
-  const techTags = ["React", "TypeScript", "Go", "Laravel", "Fiber", "REST APIs", "Tailwind CSS", "PostgreSQL", "JWT", "Redis", "Docker"];
+const ABOUT_TECH_TAGS = ["React", "TypeScript", "Go", "Laravel", "Fiber", "REST APIs", "Tailwind CSS", "PostgreSQL", "JWT", "Redis", "Docker"];
+
+const About = () => {
 
   return (
     <section id="about" className="py-16 lg:py-24 border-t border-slate-200 dark:border-slate-800">
@@ -65,9 +66,9 @@ const About = () => {
           viewport={{ once: true }}
           className="grid grid-cols-2 sm:grid-cols-4 gap-4"
         >
-          {stats.map((stat, index) => (
+          {ABOUT_STATS.map((stat) => (
             <div
-              key={index}
+              key={stat.label}
               className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-center"
             >
               <div className="inline-flex p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 mb-3">
@@ -93,7 +94,7 @@ const About = () => {
             Tech Stack
           </h3>
           <div className="flex flex-wrap gap-2">
-            {techTags.map((tech) => (
+            {ABOUT_TECH_TAGS.map((tech) => (
               <span
                 key={tech}
                 className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-mono border border-slate-200 dark:border-slate-700"

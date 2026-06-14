@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight, Folder } from "lucide-react";
 import { projects } from "../../data/projects";
 
 const Projects = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
   return (
     <section id="projects" className="py-16 lg:py-24 border-t border-slate-200 dark:border-slate-800">
       <motion.p
@@ -39,15 +37,13 @@ const Projects = () => {
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
-        {projects.map((project, index) => (
+        {projects.map((project, i) => (
           <motion.div
-            key={index}
+            key={project.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
             viewport={{ once: true, margin: "-50px" }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
             className="group"
           >
             <div className="relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
@@ -59,12 +55,17 @@ const Projects = () => {
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : project.image ? (
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="400"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
@@ -84,6 +85,7 @@ const Projects = () => {
                       href={project.webDemo}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Open ${project.title} demo`}
                       className="p-2 bg-white/90 backdrop-blur-sm rounded-lg text-black hover:bg-white transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -95,6 +97,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`View ${project.title} source code`}
                       className="p-2 bg-white/90 backdrop-blur-sm rounded-lg text-black hover:bg-white transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -111,9 +114,8 @@ const Projects = () => {
                   </h3>
                   <ArrowUpRight
                     size={16}
-                    className={`text-slate-300 dark:text-slate-600 flex-shrink-0 transition-all duration-300 ${
-                      hoveredIndex === index ? "opacity-100" : "opacity-0 translate-x-1 -translate-y-1"
-                    }`}
+                    aria-hidden="true"
+                    className="text-slate-300 dark:text-slate-600 flex-shrink-0 opacity-0 translate-x-1 -translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300"
                   />
                 </div>
                 <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2 leading-relaxed">
