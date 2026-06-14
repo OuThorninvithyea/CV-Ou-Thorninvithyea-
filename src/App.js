@@ -6,12 +6,11 @@ import Skills from "./components/sections/Skills";
 import Projects from "./components/sections/Projects";
 import Education from "./components/sections/Education";
 import Contact from "./components/sections/Contact";
-import Navigation from "./components/layout/Navigation";
+import DocsLayout from "./components/layout/DocsLayout";
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
+    <DocsLayout>
       <Hero />
       <About />
       <Skills />
@@ -19,7 +18,7 @@ function App() {
       <Education />
       <Contact />
       <Analytics />
-    </div>
+    </DocsLayout>
   );
 }
 

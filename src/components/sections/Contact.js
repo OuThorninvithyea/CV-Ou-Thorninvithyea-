@@ -34,76 +34,197 @@ const Contact = () => {
     { icon: <Twitter className="w-5 h-5" />, url: "#", label: "Twitter" },
   ];
 
+  const inputClassName =
+    "w-full px-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm";
+
   return (
-    <section id="contact" className="relative py-24 sm:py-32 bg-black overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-[128px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-[128px]" />
+    <section id="contact" className="py-16 lg:py-24 border-t border-slate-200 dark:border-slate-800">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-4"
+      >
+        # Contact
+      </motion.p>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: "-100px" }} className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm text-gray-300 mb-4">Get In Touch</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Let's Work <span className="text-gray-400">Together</span></h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">I'm always interested in new opportunities and exciting projects. Let's discuss how we can work together.</p>
-        </motion.div>
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.05 }}
+        viewport={{ once: true }}
+        className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-4"
+      >
+        Get In Touch
+      </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-            <h3 className="text-2xl font-bold text-white mb-6">Contact Info</h3>
-            <div className="space-y-4 mb-10">
-              {contactInfo.map((info, index) => (
-                <motion.a key={index} href={info.link} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.1 }} viewport={{ once: true }} whileHover={{ x: 6 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 group">
-                  <div className="p-2.5 rounded-lg bg-white/10 text-gray-300 group-hover:bg-white/20 group-hover:text-white transition-all">{info.icon}</div>
-                  <div><p className="text-xs text-gray-400 mb-0.5">{info.title}</p><p className="text-sm text-gray-200 group-hover:text-white transition-colors">{info.value}</p></div>
-                </motion.a>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="text-slate-600 dark:text-slate-400 mb-8 max-w-2xl"
+      >
+        I'm always interested in new opportunities and exciting projects. Let's discuss how we can work together.
+      </motion.p>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
+            Contact Info
+          </h3>
+          <div className="space-y-3 mb-8">
+            {contactInfo.map((info, index) => (
+              <a
+                key={index}
+                href={info.link}
+                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 transition-colors group"
+              >
+                <div className="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/30 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  {info.icon}
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5">
+                    {info.title}
+                  </p>
+                  <p className="text-sm text-slate-900 dark:text-slate-100">
+                    {info.value}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3 uppercase tracking-wider">
+              Follow Me
+            </h4>
+            <div className="flex gap-2">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
+                >
+                  {social.icon}
+                </a>
               ))}
             </div>
+          </div>
+        </motion.div>
 
-            <div>
-              <h4 className="text-sm font-semibold text-gray-300 mb-4">Follow Me</h4>
-              <div className="flex gap-3">
-                {socialLinks.map((social, index) => (
-                  <motion.a key={index} href={social.url} target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.08 }} viewport={{ once: true }} whileHover={{ scale: 1.1, y: -3 }}
-                    className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all" aria-label={social.label}>{social.icon}</motion.a>
-                ))}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-5">
+              Send a Message
+            </h3>
+            <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className={inputClassName}
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className={inputClassName}
+                    placeholder="john@example.com"
+                  />
+                </div>
               </div>
-            </div>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
-              <h3 className="text-xl font-bold text-white mb-6">Send a Message</h3>
-              <form ref={form} onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1.5">Name</label>
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/20 transition-all text-sm" placeholder="Your name" />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1.5">Email</label>
-                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/20 transition-all text-sm" placeholder="john@example.com" />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1.5">Subject</label>
-                  <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/20 transition-all text-sm" placeholder="What's this about?" />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1.5">Message</label>
-                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={4} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/20 transition-all resize-none text-sm" placeholder="Tell me about your project..." />
-                </div>
-                <motion.button type="submit" disabled={isSubmitting || submitted} whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}
-                  className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all ${submitted ? "bg-white text-black" : "bg-white text-black hover:bg-gray-200"} disabled:opacity-70 disabled:cursor-not-allowed`}>
-                  {isSubmitting ? <><Loader2 size={18} className="animate-spin" />Sending...</> : submitted ? <><CheckCircle size={18} />Sent Successfully!</> : <><Send size={18} />Send Message</>}
-                </motion.button>
-              </form>
-            </div>
-          </motion.div>
-        </div>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true }} className="text-center mt-20 pt-8 border-t border-white/5">
-          <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Ou Thorninvithyea. Built with React & Tailwind CSS.</p>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className={inputClassName}
+                  placeholder="What's this about?"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className={`${inputClassName} resize-none`}
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+              <motion.button
+                type="submit"
+                disabled={isSubmitting || submitted}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                className={`w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all ${
+                  submitted
+                    ? "bg-green-600 text-white"
+                    : "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200"
+                } disabled:opacity-70 disabled:cursor-not-allowed`}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : submitted ? (
+                  <>
+                    <CheckCircle size={16} />
+                    Sent Successfully!
+                  </>
+                ) : (
+                  <>
+                    <Send size={16} />
+                    Send Message
+                  </>
+                )}
+              </motion.button>
+            </form>
+          </div>
         </motion.div>
       </div>
     </section>
