@@ -28,7 +28,7 @@ const Skills = () => {
       <div className="md:columns-2 gap-5 mb-12">
         {skillCategories.map((category, categoryIndex) => (
           <motion.div
-            key={categoryIndex}
+            key={category.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: categoryIndex * 0.08 }}
@@ -43,9 +43,9 @@ const Skills = () => {
                 </h3>
               </div>
               <div className="space-y-3.5">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skill.name}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.3, delay: skillIndex * 0.03 }}

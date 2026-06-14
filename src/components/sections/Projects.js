@@ -123,9 +123,9 @@ const Projects = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                  {project.technologies.slice(0, 4).map((tech) => (
                     <span
-                      key={techIndex}
+                      key={tech}
                       className="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-md text-xs font-mono border border-slate-200 dark:border-slate-700"
                     >
                       {tech}

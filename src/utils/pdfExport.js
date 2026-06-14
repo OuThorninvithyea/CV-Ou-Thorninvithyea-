@@ -75,7 +75,7 @@ export const exportResumePdf = async (setIsExporting) => {
 
     pdf.save("CV_OuThorninvithyea.pdf");
   } catch (error) {
-    // Silently fail to avoid UX disruption
+    console.error("PDF export failed:", error);
   } finally {
     // Restore animations regardless of success/failure
     const styleTag = document.querySelector(

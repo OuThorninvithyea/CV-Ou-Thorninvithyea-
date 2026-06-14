@@ -98,9 +98,9 @@ const Sidebar = ({
           <ThemeToggle />
         </div>
         <div className="flex items-center gap-2 mb-4">
-          {socialLinks.map((social, i) => (
+          {socialLinks.map((social) => (
             <a
-              key={i}
+              key={social.label}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"

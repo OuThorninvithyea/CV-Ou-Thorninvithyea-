@@ -56,9 +56,9 @@ const Hero = () => {
         </div>
 
         <div className="flex items-center gap-3 mb-16">
-          {HERO_SOCIAL_LINKS.map((social, i) => (
+          {HERO_SOCIAL_LINKS.map((social) => (
             <a
-              key={i}
+              key={social.label}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
