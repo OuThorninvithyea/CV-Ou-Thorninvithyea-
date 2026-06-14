@@ -63,7 +63,7 @@ const DocsLayout = ({ children }) => {
       </AnimatePresence>
 
       <main className="lg:ml-64 min-h-screen pt-14 lg:pt-0">
-        <div className="max-w-3xl mx-auto px-6 py-12 lg:py-16">{children}</div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 lg:py-16">{children}</div>
       </main>
     </div>
   );

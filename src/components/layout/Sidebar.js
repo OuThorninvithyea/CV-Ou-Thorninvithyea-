@@ -76,7 +76,7 @@ const Sidebar = ({
                     e.preventDefault();
                     onNavClick(item.href);
                   }}
-                  className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                     isActive
                       ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100"
                       : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200"
@@ -105,7 +105,7 @@ const Sidebar = ({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-2.5 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors min-w-[44px] min-h-[44px] inline-flex items-center justify-center"
             >
               {social.icon}
             </a>
@@ -124,7 +124,7 @@ const Sidebar = ({
       animate={{ x: 0 }}
       exit={{ x: "-100%" }}
       transition={{ type: "spring", damping: 25, stiffness: 200 }}
-      className="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 shadow-2xl"
+      className="fixed inset-y-0 left-0 z-50 w-[min(85vw,18rem)] bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 shadow-2xl"
     >
       {content}
     </motion.aside>

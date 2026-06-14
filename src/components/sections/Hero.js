@@ -25,7 +25,7 @@ const Hero = () => {
         <p className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-4">
           # Introduction
         </p>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-4 break-words">
           Ou Thorninvithyea
         </h1>
         <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-6 font-mono">

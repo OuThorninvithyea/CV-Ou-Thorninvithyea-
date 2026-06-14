@@ -8,7 +8,7 @@ const Header = ({ onMenuClick }) => {
       <div className="flex items-center justify-between h-full px-4">
         <button
           onClick={onMenuClick}
-          className="p-2 -ml-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+          className="p-3 -ml-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 min-w-[44px] min-h-[44px] inline-flex items-center justify-center"
           aria-label="Open menu"
         >
           <Menu size={20} />

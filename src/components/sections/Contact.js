@@ -42,18 +42,6 @@ const Contact = () => {
       .finally(() => setIsSubmitting(false));
   };
 
-  const contactInfo = [
-    { icon: <Mail className="w-5 h-5" />, title: "Email", value: "Vithyeasa@gmail.com", link: "mailto:Vithyeasa@gmail.com" },
-    { icon: <Phone className="w-5 h-5" />, title: "Phone", value: "+855 11 423 735", link: "tel:+85511423735" },
-    { icon: <MapPin className="w-5 h-5" />, title: "Location", value: "Phnom Penh, Cambodia", link: "https://maps.google.com/?q=Phnom+Penh,+Cambodia" },
-  ];
-
-  const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, url: "https://github.com/OuThorninvithyea?tab=repositories", label: "GitHub" },
-    { icon: <Linkedin className="w-5 h-5" />, url: "#", label: "LinkedIn" },
-    { icon: <Twitter className="w-5 h-5" />, url: "#", label: "Twitter" },
-  ];
-
   const inputClassName =
     "w-full px-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm";
 
