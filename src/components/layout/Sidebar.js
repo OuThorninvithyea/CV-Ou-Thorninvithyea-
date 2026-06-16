@@ -10,7 +10,7 @@ const socialLinks = [
     href: "https://github.com/OuThorninvithyea?tab=repositories",
     label: "GitHub",
   },
-  { icon: <Linkedin size={18} />, href: "#", label: "LinkedIn" },
+  { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/ou-thornin-vithyea-256950389", label: "LinkedIn" },
   {
     icon: <Mail size={18} />,
     href: "mailto:Vithyeasa@gmail.com",

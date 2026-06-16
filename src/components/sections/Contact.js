@@ -12,7 +12,7 @@ const CONTACT_INFO = [
 
 const CONTACT_SOCIAL_LINKS = [
   { icon: <Github className="w-5 h-5" />, url: "https://github.com/OuThorninvithyea?tab=repositories", label: "GitHub" },
-  { icon: <Linkedin className="w-5 h-5" />, url: "#", label: "LinkedIn" },
+  { icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/in/ou-thornin-vithyea-256950389", label: "LinkedIn" },
   { icon: <Twitter className="w-5 h-5" />, url: "#", label: "Twitter" },
 ];
 
