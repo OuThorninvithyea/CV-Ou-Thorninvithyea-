@@ -2,8 +2,10 @@ import React from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
+import Experience from "./components/sections/Experience";
 import Skills from "./components/sections/Skills";
 import Projects from "./components/sections/Projects";
+import Blog from "./components/sections/Blog";
 import Education from "./components/sections/Education";
 import Contact from "./components/sections/Contact";
 import DocsLayout from "./components/layout/DocsLayout";
@@ -13,8 +15,10 @@ function App() {
     <DocsLayout>
       <Hero />
       <About />
+      <Experience />
       <Skills />
       <Projects />
+      <Blog />
       <Education />
       <Contact />
       <Analytics />
