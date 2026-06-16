@@ -32,7 +32,7 @@ const Hero = () => {
           Software Engineer
         </p>
         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl">
-          Passionate Software Engineer with 2+ years of experience in full-stack development,
+          Passionate Software Engineer specializing in full-stack development,
           specializing in React, Go, Laravel, and modern API engineering. I build accessible,
           performant interfaces and scalable backend systems.
         </p>

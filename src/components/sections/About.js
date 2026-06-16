@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Briefcase, Award, Target, Users } from "lucide-react";
 
 const ABOUT_STATS = [
-  { icon: <Briefcase className="w-4 h-4" />, number: "2+", label: "Years Experience" },
+  { icon: <Briefcase className="w-4 h-4" />, number: "2026", label: "Started Career" },
   { icon: <Award className="w-4 h-4" />, number: "15+", label: "Projects Completed" },
   { icon: <Target className="w-4 h-4" />, number: "100%", label: "Client Satisfaction" },
   { icon: <Users className="w-4 h-4" />, number: "5+", label: "Team Collaborations" },
@@ -47,7 +47,7 @@ const About = () => {
             Professional Summary
           </h3>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-            Passionate Software Engineer with 2+ years of experience in full-stack development,
+            Passionate Software Engineer specializing in full-stack development,
             specializing in React, Go, Laravel, and modern API engineering. Expert in crafting
             accessible, performant interfaces that deliver exceptional user experiences and drive
             business growth.

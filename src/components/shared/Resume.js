@@ -45,16 +45,9 @@ const Resume = React.forwardRef((props, ref) => {
           className="text-gray-700"
           style={{ fontSize: "11px", textAlign: "justify" }}
         >
-          Passionate Software Engineer with 2+ years of experience in full-stack
-          web development, specializing in building scalable web applications
-          and real-time systems with React, Go, and Laravel. Proficient in
-          modern frontend frameworks and backend API development with Fiber,
-          with expertise in writing clean, maintainable code following Clean
-          Architecture principles, designing REST APIs, debugging complex
-          issues, and collaborating with cross-functional teams. Strong
-          foundation in software development lifecycle, version control,
-          testing, and deployment. Committed to continuous learning and staying
-          current with emerging technologies and industry best practices.
+          Passionate Software Engineer specializing in full-stack
+          web development, with hands-on experience building scalable web
+          applications and real-time systems with React, Go, and Laravel.
         </p>
       </section>
 
@@ -142,69 +135,31 @@ const Resume = React.forwardRef((props, ref) => {
               Software Engineer
             </h3>
             <p className="text-gray-600" style={{ fontSize: "10px" }}>
-              2023 - Present
+              2026 - Present
             </p>
           </div>
           <p className="text-gray-600 mb-1" style={{ fontSize: "10px" }}>
-            Tech Innovators • Phnom Penh, Cambodia
+            OTRESS • Phnom Penh, Cambodia
           </p>
           <ul
             className="list-disc list-inside text-gray-700 space-y-0.5 ml-2"
             style={{ fontSize: "9px" }}
           >
             <li>
-              Design and develop responsive web applications using React and
-              modern JavaScript frameworks
+              Building backend APIs with Go and Fiber for a multi-product startup ecosystem
             </li>
             <li>
-              Write clean, maintainable code following best practices and coding
-              standards
+              Designing PostgreSQL databases with connection pooling for high-concurrency workloads
             </li>
             <li>
-              Debug and troubleshoot software defects to ensure optimal
-              performance
+              Developing frontend interfaces with Vue.js, HTML, and JavaScript
             </li>
             <li>
-              Collaborate with teams to gather requirements and deliver
-              solutions
+              Applying deep backend concepts: API design patterns, clean architecture, and database optimization
             </li>
             <li>
-              Conduct code reviews and implement automated testing using Git
-              version control
+              Contributing to taxi booking app, e-learning platform, and Cambodia's first social media platform
             </li>
-          </ul>
-        </div>
-        <div className="mb-4">
-          <div className="flex justify-between items-start mb-1">
-            <h3
-              className="font-semibold text-gray-800"
-              style={{ fontSize: "12px", fontWeight: "600" }}
-            >
-              Junior Front-End Developer
-            </h3>
-            <p className="text-gray-600" style={{ fontSize: "10px" }}>
-              2022 - 2023
-            </p>
-          </div>
-          <p className="text-gray-600 mb-1" style={{ fontSize: "10px" }}>
-            Digital Solutions Cambodia • Phnom Penh, Cambodia
-          </p>
-          <ul
-            className="list-disc list-inside text-gray-700 space-y-0.5 ml-2"
-            style={{ fontSize: "9px" }}
-          >
-            <li>
-              Developed reusable UI components and integrated APIs for web
-              applications
-            </li>
-            <li>
-              Participated in agile development with daily standups and sprint
-              planning
-            </li>
-            <li>
-              Fixed bugs and optimized code to improve application performance
-            </li>
-            <li>Learned software engineering principles and design patterns</li>
           </ul>
         </div>
       </section>
