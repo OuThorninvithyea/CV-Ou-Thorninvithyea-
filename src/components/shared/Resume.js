@@ -139,7 +139,7 @@ const Resume = React.forwardRef((props, ref) => {
             </p>
           </div>
           <p className="text-gray-600 mb-1" style={{ fontSize: "10px" }}>
-            OTRESS • Phnom Penh, Cambodia
+            OTRES • Phnom Penh, Cambodia
           </p>
           <ul
             className="list-disc list-inside text-gray-700 space-y-0.5 ml-2"

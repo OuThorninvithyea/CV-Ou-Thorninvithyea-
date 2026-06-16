@@ -1,7 +1,7 @@
 export const experience = [
   {
-    id: "otress",
-    company: "OTRESS",
+    id: "otres",
+    company: "OTRES",
     role: "Software Engineer",
     period: "2026 — Present",
     location: "Phnom Penh, Cambodia",
@@ -30,7 +30,7 @@ export const experience = [
 export const historyTimeline = [
   {
     year: "2026",
-    title: "Software Engineer at OTRESS",
+    title: "Software Engineer at OTRES",
     description:
       "Joined an ambitious Cambodian startup building a social media platform. Working with Go, Fiber, PostgreSQL, Vue.js, and deep backend engineering concepts.",
   },
