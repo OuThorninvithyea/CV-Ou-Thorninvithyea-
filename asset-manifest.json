@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/CV-Ou-Thorninvithyea-/static/css/main.c23ec1d7.css",
-    "main.js": "/CV-Ou-Thorninvithyea-/static/js/main.431671d2.js",
-    "static/js/389.32dd2a0d.chunk.js": "/CV-Ou-Thorninvithyea-/static/js/389.32dd2a0d.chunk.js",
-    "static/js/239.e89263e4.chunk.js": "/CV-Ou-Thorninvithyea-/static/js/239.e89263e4.chunk.js",
-    "static/js/977.aa5b3bcd.chunk.js": "/CV-Ou-Thorninvithyea-/static/js/977.aa5b3bcd.chunk.js",
-    "static/js/455.35bfa1dc.chunk.js": "/CV-Ou-Thorninvithyea-/static/js/455.35bfa1dc.chunk.js",
-    "index.html": "/CV-Ou-Thorninvithyea-/index.html",
-    "main.c23ec1d7.css.map": "/CV-Ou-Thorninvithyea-/static/css/main.c23ec1d7.css.map",
-    "main.431671d2.js.map": "/CV-Ou-Thorninvithyea-/static/js/main.431671d2.js.map",
-    "389.32dd2a0d.chunk.js.map": "/CV-Ou-Thorninvithyea-/static/js/389.32dd2a0d.chunk.js.map",
-    "239.e89263e4.chunk.js.map": "/CV-Ou-Thorninvithyea-/static/js/239.e89263e4.chunk.js.map",
-    "977.aa5b3bcd.chunk.js.map": "/CV-Ou-Thorninvithyea-/static/js/977.aa5b3bcd.chunk.js.map",
-    "455.35bfa1dc.chunk.js.map": "/CV-Ou-Thorninvithyea-/static/js/455.35bfa1dc.chunk.js.map"
+    "main.css": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/css/main.c23ec1d7.css",
+    "main.js": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/main.09802e1f.js",
+    "static/js/389.32dd2a0d.chunk.js": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/389.32dd2a0d.chunk.js",
+    "static/js/239.e89263e4.chunk.js": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/239.e89263e4.chunk.js",
+    "static/js/977.aa5b3bcd.chunk.js": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/977.aa5b3bcd.chunk.js",
+    "static/js/455.35bfa1dc.chunk.js": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/455.35bfa1dc.chunk.js",
+    "index.html": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/index.html",
+    "main.c23ec1d7.css.map": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/css/main.c23ec1d7.css.map",
+    "main.09802e1f.js.map": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/main.09802e1f.js.map",
+    "389.32dd2a0d.chunk.js.map": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/389.32dd2a0d.chunk.js.map",
+    "239.e89263e4.chunk.js.map": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/239.e89263e4.chunk.js.map",
+    "977.aa5b3bcd.chunk.js.map": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/977.aa5b3bcd.chunk.js.map",
+    "455.35bfa1dc.chunk.js.map": "https://outhorninvithyea.github.io/CV-Ou-Thorninvithyea-/static/js/455.35bfa1dc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c23ec1d7.css",
-    "static/js/main.431671d2.js"
+    "static/js/main.09802e1f.js"
   ]
 }
