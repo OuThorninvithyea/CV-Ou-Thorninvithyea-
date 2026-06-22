@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import Resume from "../shared/Resume";
 import { Github, Linkedin, Mail, Download, Code, Zap, Globe } from "lucide-react";
-import { exportResumePdf } from "../../utils/pdfExport";
 
 const HERO_CARDS = [
   { icon: <Code className="w-5 h-5" />, title: "Software Engineer", description: "Building performant, accessible, and responsive user interfaces" },
@@ -16,9 +14,9 @@ const HERO_SOCIAL_LINKS = [
   { icon: <Mail size={18} />, href: "mailto:Vithyeasa@gmail.com", label: "Email" },
 ];
 
-const Hero = () => {
-  const [isExporting, setIsExporting] = useState(false);
+const CV_PDF_PATH = `${process.env.PUBLIC_URL || ""}/assets/outhornnivithyea_cv.pdf`;
 
+const Hero = () => {
   return (
     <section id="hero" className="relative">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
@@ -38,14 +36,14 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 mb-10">
-          <button
-            onClick={() => exportResumePdf(setIsExporting)}
-            disabled={isExporting}
+          <a
+            href={CV_PDF_PATH}
+            download="outhornnivithyea_cv.pdf"
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg font-medium hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors text-sm"
           >
             <Download size={16} />
-            {isExporting ? "Preparing..." : "Download CV"}
-          </button>
+            Download CV
+          </a>
           <a
             href="mailto:Vithyeasa@gmail.com"
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg font-medium hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors text-sm"
@@ -92,10 +90,6 @@ const Hero = () => {
             </p>
           </motion.div>
         ))}
-      </div>
-
-      <div id="resume-print" style={{ position: "absolute", left: -10000, top: 0 }}>
-        <Resume />
       </div>
     </section>
   );
