@@ -16,6 +16,9 @@ const DocsLayout = ({ children }) => {
   useEffect(() => {
     if (!sidebarOpen) return;
 
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         setSidebarOpen(false);
@@ -23,20 +26,25 @@ const DocsLayout = ({ children }) => {
     };
 
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
   }, [sidebarOpen]);
 
   const handleNavClick = (href) => {
     setSidebarOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      element.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      window.history.replaceState(null, "", href);
     }
   };
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
-      <Header onMenuClick={() => setSidebarOpen(true)} />
+      <Header onMenuClick={() => setSidebarOpen(true)} menuOpen={sidebarOpen} />
 
       <Sidebar
         navItems={navItems}
@@ -47,7 +55,9 @@ const DocsLayout = ({ children }) => {
       <AnimatePresence>
         {sidebarOpen && (
           <>
-            <div
+            <button
+              type="button"
+              aria-label="Close navigation menu"
               className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
               onClick={() => setSidebarOpen(false)}
             />

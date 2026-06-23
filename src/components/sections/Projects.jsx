@@ -1,7 +1,49 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight, Folder } from "lucide-react";
 import { projects } from "../../data/projects";
+
+const ProjectVideo = ({ src, poster, title }) => {
+  const containerRef = useRef(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node || !("IntersectionObserver" in window)) {
+      setShouldLoad(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "240px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="w-full h-full">
+      <video
+        src={shouldLoad ? src : undefined}
+        poster={poster}
+        autoPlay={shouldLoad}
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-label={`${title} project preview`}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
+  );
+};
 
 const Projects = () => {
   return (
@@ -49,14 +91,10 @@ const Projects = () => {
             <div className="relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
               <div className="relative overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
                 {project.video ? (
-                  <video
+                  <ProjectVideo
                     src={project.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    poster={project.poster}
+                    title={project.title}
                   />
                 ) : project.image ? (
                   <img
