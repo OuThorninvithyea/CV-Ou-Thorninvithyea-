@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowUpRight, Tag } from "lucide-react";
+import { Calendar, Clock, FileEdit, Tag } from "lucide-react";
 import { blogPosts } from "../../data/blog";
 
 const COLORS = [
@@ -43,7 +43,7 @@ const Blog = () => {
         viewport={{ once: true }}
         className="text-slate-600 dark:text-slate-400 mb-8 max-w-2xl"
       >
-        Thoughts on software engineering, architecture patterns, and tools I work with.
+        Draft topics on software engineering, architecture patterns, and tools I work with.
       </motion.p>
 
       <div className="flex flex-wrap gap-2 mb-10">
@@ -99,8 +99,8 @@ const Blog = () => {
                   </span>
                 ))}
               </div>
-              <span className="text-xs text-primary-600 dark:text-primary-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 ml-auto">
-                Read more <ArrowUpRight size={12} />
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium flex items-center gap-1 ml-auto">
+                <FileEdit size={12} /> Draft
               </span>
             </div>
           </motion.article>

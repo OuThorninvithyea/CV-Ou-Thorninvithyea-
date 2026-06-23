@@ -47,10 +47,9 @@ const About = () => {
             Professional Summary
           </h3>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-            Passionate Software Engineer specializing in full-stack development,
-            specializing in React, Go, Laravel, and modern API engineering. Expert in crafting
-            accessible, performant interfaces that deliver exceptional user experiences and drive
-            business growth.
+            Full-stack Software Engineer working with React, Go, Laravel, and modern API
+            engineering. I focus on accessible, performant products that solve practical
+            business problems.
           </p>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
             My expertise spans the full software development lifecycle — from requirements gathering

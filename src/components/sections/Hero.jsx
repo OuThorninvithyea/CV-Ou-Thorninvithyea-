@@ -14,7 +14,7 @@ const HERO_SOCIAL_LINKS = [
   { icon: <Mail size={18} />, href: "mailto:Vithyeasa@gmail.com", label: "Email" },
 ];
 
-const CV_PDF_PATH = `${process.env.PUBLIC_URL || ""}/assets/outhornnivithyea_cv.pdf`;
+const CV_PDF_PATH = "/assets/outhornnivithyea_cv.pdf";
 
 const Hero = () => {
   return (
@@ -30,9 +30,8 @@ const Hero = () => {
           Software Engineer
         </p>
         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl">
-          Passionate Software Engineer specializing in full-stack development,
-          specializing in React, Go, Laravel, and modern API engineering. I build accessible,
-          performant interfaces and scalable backend systems.
+          Full-stack Software Engineer working with React, Go, Laravel, and modern API
+          engineering. I build accessible interfaces and scalable backend systems.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 mb-10">

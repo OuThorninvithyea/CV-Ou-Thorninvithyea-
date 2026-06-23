@@ -1,0 +1,17 @@
+{
+  "name": "Ou Thorninvithyea — Software Engineer",
+  "short_name": "OT Portfolio",
+  "description": "Portfolio of software engineer Ou Thorninvithyea.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

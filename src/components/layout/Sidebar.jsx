@@ -72,6 +72,7 @@ const Sidebar = ({
               <li key={item.name}>
                 <a
                   href={item.href}
+                  aria-current={isActive ? "location" : undefined}
                   onClick={(e) => {
                     e.preventDefault();
                     onNavClick(item.href);
@@ -120,6 +121,10 @@ const Sidebar = ({
 
   return mobile ? (
     <motion.aside
+      id="mobile-navigation"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site navigation"
       initial={{ x: "-100%" }}
       animate={{ x: 0 }}
       exit={{ x: "-100%" }}
@@ -129,7 +134,7 @@ const Sidebar = ({
       {content}
     </motion.aside>
   ) : (
-    <aside className="hidden lg:flex fixed inset-y-0 left-0 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex-col">
+    <aside aria-label="Site navigation" className="hidden lg:flex fixed inset-y-0 left-0 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex-col">
       {content}
     </aside>
   );

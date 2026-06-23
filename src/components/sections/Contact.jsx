@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, CheckCircle, Loader2 } from "lucide-react";
 import { EMAILJS_CONFIG } from "../../config/emailjs";
 
 const CONTACT_INFO = [
@@ -13,12 +13,10 @@ const CONTACT_INFO = [
 const CONTACT_SOCIAL_LINKS = [
   { icon: <Github className="w-5 h-5" />, url: "https://github.com/OuThorninvithyea?tab=repositories", label: "GitHub" },
   { icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/in/ou-thornin-vithyea-256950389", label: "LinkedIn" },
-  { icon: <Twitter className="w-5 h-5" />, url: "#", label: "Twitter" },
 ];
 
 const Contact = () => {
-  const form = useRef();
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "", website: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
@@ -26,13 +24,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (formData.website) return;
     setIsSubmitting(true);
     setError(null);
     const { publicKey, serviceID, templateID } = EMAILJS_CONFIG;
     emailjs.send(serviceID, templateID, { from_name: formData.name, from_email: formData.email, reply_to: formData.email, subject: formData.subject, message: formData.message, to_name: "Ou Thorninvithyea" }, publicKey)
       .then(() => {
         setSubmitted(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "", website: "" });
         setTimeout(() => setSubmitted(false), 4000);
       })
       .catch((err) => {
@@ -142,9 +141,20 @@ const Contact = () => {
             <div aria-live="polite" className="sr-only">
               {submitted ? "Message sent successfully." : error ? `Error: ${error}` : ""}
             </div>
-            <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               {error && (
-                <div className="p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-sm text-red-700 dark:text-red-300">
+                <div role="alert" className="p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-sm text-red-700 dark:text-red-300">
                   {error}
                 </div>
               )}
@@ -160,6 +170,8 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    maxLength={80}
+                    autoComplete="name"
                     className={inputClassName}
                     placeholder="Your name"
                   />
@@ -175,6 +187,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    maxLength={254}
+                    autoComplete="email"
                     className={inputClassName}
                     placeholder="john@example.com"
                   />
@@ -191,6 +205,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                  maxLength={120}
                   className={inputClassName}
                   placeholder="What's this about?"
                 />
@@ -205,6 +220,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  maxLength={2000}
                   rows={4}
                   className={`${inputClassName} resize-none`}
                   placeholder="Tell me about your project..."

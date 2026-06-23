@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Inter"', "sans-serif"],
-        mono: ['"JetBrains Mono"', "monospace"],
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       animation: {
         float: "float 6s ease-in-out infinite",

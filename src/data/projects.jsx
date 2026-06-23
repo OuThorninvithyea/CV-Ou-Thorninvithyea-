@@ -28,7 +28,8 @@ export const projects = [
     title: "HappyHourHunt",
     description:
       "Premium nightlife discovery platform for Phnom Penh. Features a real-time 'Swarm Map', custom data pipelines for venue scraping, and a high-performance universal UI.",
-    video: "/assets/videos/NightLifeapp.MP4",
+    video: "/assets/videos/nightlife-preview.mp4",
+    poster: "/assets/videos/nightlife-poster.jpg",
     technologies: [
       "React Native",
       "Expo",
@@ -42,7 +43,6 @@ export const projects = [
       "🔍 Real-time venue discovery map",
       "✨ Premium dark-mode optimized UI",
     ],
-    github: "#",
     webDemo: "https://happyhourhunt.expo.app",
     mobileDemo: "https://expo.dev/@cheashawn/happyhourhunt",
     instructions:
@@ -54,7 +54,8 @@ export const projects = [
     title: "Interactive Web Experience",
     description:
       "A premium, motion-rich web experience showcasing advanced frontend animations and interactive design patterns.",
-    video: "/assets/videos/MockUpvideo3.mp4",
+    video: "/assets/videos/web-experience-preview.mp4",
+    poster: "/assets/videos/web-experience-poster.jpg",
     technologies: [
       "React",
       "Framer Motion",
@@ -67,7 +68,6 @@ export const projects = [
       "Interactive UI",
       "Performance Optimized",
     ],
-    github: "#",
     webDemo: "https://anatomyclub.store/",
     icon: <Zap className="w-6 h-6" />,
     gradient: "from-blue-400 to-indigo-600",
@@ -85,7 +85,6 @@ export const projects = [
       "Shopping Cart",
       "Responsive Layout",
     ],
-    github: "#",
     webDemo: "https://anatomyclub.store/",
     icon: <Code className="w-6 h-6" />,
     gradient: "from-gray-300 to-gray-500",
@@ -103,7 +102,6 @@ export const projects = [
       "High Performance",
       "Interactive Elements",
     ],
-    github: "#",
     webDemo: "https://hustle-website-seven.vercel.app/",
     icon: <Zap className="w-6 h-6" />,
     gradient: "from-gray-400 to-gray-600",
@@ -121,7 +119,6 @@ export const projects = [
       "Growth Optimization",
       "Scalable Storefronts",
     ],
-    github: "#",
     webDemo: "https://website-agency-phi-beryl.vercel.app/",
     icon: <Database className="w-6 h-6" />,
     gradient: "from-gray-500 to-gray-700",

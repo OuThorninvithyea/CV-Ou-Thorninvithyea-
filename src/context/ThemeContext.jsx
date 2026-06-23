@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const ThemeContext = createContext({
   theme: "light",
@@ -6,16 +6,11 @@ const ThemeContext = createContext({
 });
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
+  const [theme, setTheme] = useState(() => {
     const stored = localStorage.getItem("theme");
-    if (stored === "dark" || stored === "light") {
-      setTheme(stored);
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    }
-  }, []);
+    if (stored === "dark" || stored === "light") return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  });
 
   useEffect(() => {
     const root = document.documentElement;
@@ -31,8 +26,10 @@ export const ThemeProvider = ({ children }) => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
+  const value = useMemo(() => ({ theme, toggleTheme }), [theme]);
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   );
