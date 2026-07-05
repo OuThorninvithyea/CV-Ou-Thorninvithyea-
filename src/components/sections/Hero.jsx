@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Download, Code, Zap, Globe } from "lucide-react";
 
 const HERO_CARDS = [
-  { icon: <Code className="w-5 h-5" />, title: "Software Engineer", description: "Building performant, accessible, and responsive user interfaces" },
-  { icon: <Zap className="w-5 h-5" />, title: "Performance Optimizer", description: "Optimizing applications for speed and efficiency" },
-  { icon: <Globe className="w-5 h-5" />, title: "Web Developer", description: "Creating modern web solutions with cutting-edge technologies" },
+  { icon: <Code className="w-5 h-5" />, title: "Backend API Engineer", description: "Designing Go/Fiber APIs, auth flows, and PostgreSQL-backed services" },
+  { icon: <Globe className="w-5 h-5" />, title: "Product UI Builder", description: "Shipping React interfaces that are responsive, accessible, and easy to use" },
+  { icon: <Zap className="w-5 h-5" />, title: "Performance-Minded", description: "Keeping portfolio and product experiences fast, focused, and maintainable" },
 ];
 
 const HERO_SOCIAL_LINKS = [
@@ -27,11 +27,12 @@ const Hero = () => {
           Ou Thorninvithyea
         </h1>
         <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-6 font-mono">
-          Software Engineer
+          Full-Stack / Backend Engineer
         </p>
         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl">
-          Full-stack Software Engineer working with React, Go, Laravel, and modern API
-          engineering. I build accessible interfaces and scalable backend systems.
+          I build Go APIs, React interfaces, and production-minded workflows for
+          startup products, with a strong focus on backend architecture and clean user
+          experience.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 mb-10">

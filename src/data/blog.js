@@ -1,5 +1,103 @@
 export const blogPosts = [
   {
+    id: "api-request-flow-go-fiber",
+    title: "What I Learned About How API Requests Work",
+    date: "2026-07-05",
+    readTime: "4 min",
+    tags: ["HTTP", "Go", "Fiber", "Backend"],
+    excerpt:
+      "A practical note from learning Go Fiber: a simple endpoint still has a full request flow behind it, from client to router to handler, service, repository, database, and response.",
+    content: [
+      {
+        type: "paragraph",
+        text: "While learning backend development with Go Fiber, I started to understand that an API request is more than just calling an endpoint.",
+      },
+      {
+        type: "paragraph",
+        text: "When we write something like:",
+      },
+      {
+        type: "code",
+        code: "http://127.0.0.1:3000/login",
+      },
+      {
+        type: "paragraph",
+        text: "It has several parts:",
+      },
+      {
+        type: "code",
+        code: `http        = protocol
+127.0.0.1  = host
+3000        = port
+/login      = path or route`,
+      },
+      {
+        type: "paragraph",
+        text: "The client can be a browser, mobile app, Postman, or curl. That client sends an HTTP request to the server.",
+      },
+      {
+        type: "code",
+        code: `POST /login HTTP/1.1
+Host: 127.0.0.1:3000
+Content-Type: application/json
+
+{
+  "username": "ADMIN",
+  "password": "admin123"
+}`,
+      },
+      {
+        type: "paragraph",
+        text: "Then the server sends a response back:",
+      },
+      {
+        type: "code",
+        code: `HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "success": true,
+  "message": "Login success"
+}`,
+      },
+      {
+        type: "paragraph",
+        text: "In my Go Fiber backend, the request flow looks like this:",
+      },
+      {
+        type: "code",
+        code: `Client
+-> HTTP request
+-> Fiber router
+-> Handler
+-> Service
+-> Repository
+-> Database
+-> Response`,
+      },
+      {
+        type: "paragraph",
+        text: "Each layer has a job. The router matches the URL path and HTTP method. The handler receives the request, validates the input, and returns the response. The service contains the business logic. The repository talks to the database.",
+      },
+      {
+        type: "paragraph",
+        text: "Learning this helped me understand that backend development is not only about creating routes. It is about understanding how data moves from the client, through the network, into the server, through the application layers, and back to the client.",
+      },
+      {
+        type: "paragraph",
+        text: "The biggest lesson for me:",
+      },
+      {
+        type: "code",
+        code: "A simple API endpoint has a full system behind it.",
+      },
+      {
+        type: "paragraph",
+        text: "That changed the way I think about backend development.",
+      },
+    ],
+  },
+  {
     id: "clean-architecture-go",
     title: "Clean Architecture in Go — A Practical Guide",
     date: "2025-11-20",
