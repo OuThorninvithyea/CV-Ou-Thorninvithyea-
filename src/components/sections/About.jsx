@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Briefcase, Award, Target, Users } from "lucide-react";
 
 const ABOUT_STATS = [
-  { icon: <Briefcase className="w-4 h-4" />, number: "2026", label: "Started Career" },
-  { icon: <Award className="w-4 h-4" />, number: "15+", label: "Projects Completed" },
-  { icon: <Target className="w-4 h-4" />, number: "100%", label: "Client Satisfaction" },
-  { icon: <Users className="w-4 h-4" />, number: "5+", label: "Team Collaborations" },
+  { icon: <Briefcase className="w-4 h-4" />, number: "2026", label: "Startup Engineering" },
+  { icon: <Award className="w-4 h-4" />, number: "Go + React", label: "Primary Stack" },
+  { icon: <Target className="w-4 h-4" />, number: "API-first", label: "Backend Focus" },
+  { icon: <Users className="w-4 h-4" />, number: "Team", label: "Collaboration" },
 ];
 
 const ABOUT_TECH_TAGS = ["React", "TypeScript", "Go", "Laravel", "Fiber", "REST APIs", "Tailwind CSS", "PostgreSQL", "JWT", "Redis", "Docker"];
@@ -47,9 +47,9 @@ const About = () => {
             Professional Summary
           </h3>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-            Full-stack Software Engineer working with React, Go, Laravel, and modern API
-            engineering. I focus on accessible, performant products that solve practical
-            business problems.
+            Full-stack Software Engineer building backend and frontend pieces of product
+            ideas: Go/Fiber APIs, PostgreSQL data models, auth/session flows, and
+            React/Vue interfaces.
           </p>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
             My expertise spans the full software development lifecycle — from requirements gathering
