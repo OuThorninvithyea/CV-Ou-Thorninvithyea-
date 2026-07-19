@@ -15,59 +15,81 @@ const HERO_SOCIAL_LINKS = [
 ];
 
 const CV_PDF_PATH = "/assets/outhornnivithyea_cv.pdf";
+const PROFILE_IMAGE_PATH = "/assets/profile/ou-thorninvithyea.jpg";
 
 const Hero = () => {
   return (
     <section id="hero" className="relative">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <p className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-4">
-          # Introduction
-        </p>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-4 break-words">
-          Ou Thorninvithyea
-        </h1>
-        <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-6 font-mono">
-          Full-Stack / Backend Engineer
-        </p>
-        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl">
-          I build Go APIs, React interfaces, and production-minded workflows for
-          startup products, with a strong focus on backend architecture and clean user
-          experience.
-        </p>
+      <div className="mb-16 grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <p className="text-sm font-mono text-primary-600 dark:text-primary-400 mb-4">
+            # Introduction
+          </p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-4 break-words">
+            Ou Thorninvithyea
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-6 font-mono">
+            Full-Stack / Backend Engineer
+          </p>
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl">
+            I build Go APIs, React interfaces, and production-minded workflows for
+            startup products, with a strong focus on backend architecture and clean user
+            experience.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 mb-10">
-          <a
-            href={CV_PDF_PATH}
-            download="outhornnivithyea_cv.pdf"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg font-medium hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors text-sm"
-          >
-            <Download size={16} />
-            Download CV
-          </a>
-          <a
-            href="mailto:Vithyeasa@gmail.com"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg font-medium hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors text-sm"
-          >
-            <Mail size={16} />
-            Get In Touch
-          </a>
-        </div>
-
-        <div className="flex items-center gap-3 mb-16">
-          {HERO_SOCIAL_LINKS.map((social) => (
+          <div className="flex flex-col sm:flex-row gap-3 mb-10">
             <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.label}
-              className="p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
+              href={CV_PDF_PATH}
+              download="outhornnivithyea_cv.pdf"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg font-medium hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors text-sm"
             >
-              {social.icon}
+              <Download size={16} />
+              Download CV
             </a>
-          ))}
-        </div>
-      </motion.div>
+            <a
+              href="mailto:Vithyeasa@gmail.com"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg font-medium hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors text-sm"
+            >
+              <Mail size={16} />
+              Get In Touch
+            </a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            {HERO_SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="max-w-xs sm:max-w-sm lg:max-w-none"
+        >
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <img
+              src={PROFILE_IMAGE_PATH}
+              alt="Portrait of Ou Thorninvithyea"
+              width="933"
+              height="1200"
+              className="aspect-[4/5] w-full object-cover object-top"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </motion.div>
+      </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {HERO_CARDS.map((card, i) => (
