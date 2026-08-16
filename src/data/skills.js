@@ -14,9 +14,12 @@ export const skillCategories = [
       { name: "i18n / Localization", level: 78 },
       { name: "Database Design", level: 78 },
       { name: "JWT / Auth", level: 85 },
-      { name: "Redis", level: 80 },
+      { name: "Redis", level: 82 },
       { name: "Refresh Token", level: 82 },
-      { name: "Docker", level: 78 },
+      { name: "Docker", level: 80 },
+      { name: "Server-Sent Events (Real-time)", level: 78 },
+      { name: "Media Processing Pipelines", level: 75 },
+      { name: "Payment Gateway Integration", level: 72 },
     ],
   },
   {
@@ -30,6 +33,17 @@ export const skillCategories = [
       { name: "CSS3", level: 90 },
       { name: "Tailwind CSS", level: 85 },
       { name: "Next.js", level: 80 },
+      { name: "Nuxt.js (Vue 3)", level: 80 },
+    ],
+  },
+  {
+    title: "Mobile Development",
+    gradient: "from-teal-400 to-cyan-600",
+    skills: [
+      { name: "Flutter", level: 78 },
+      { name: "Dart", level: 78 },
+      { name: "Cross-platform Web/Mobile Parity", level: 75 },
+      { name: "State Management", level: 72 },
     ],
   },
   {
@@ -70,6 +84,8 @@ export const skillCategories = [
       { name: "Gemini / OpenAI", level: 90 },
       { name: "Figma Make", level: 80 },
       { name: "Antigravity", level: 75 },
+      { name: "CI/CD Pipelines", level: 78 },
+      { name: "Multi-platform Docker Builds", level: 75 },
     ],
   },
 ];
