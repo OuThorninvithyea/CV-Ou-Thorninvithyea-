@@ -105,6 +105,94 @@ Content-Type: application/json
     tags: ["Go", "Architecture", "Backend"],
     excerpt:
       "How I structure Go projects with Clean Architecture: handlers, usecases, and repositories. Lessons learned from building a production admin API with Fiber and PostgreSQL.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Every Go backend I've shipped starts simple: a handler that reads the request, hits the database, and writes a response. That works fine until the product grows — more endpoints, more business rules, and features like caching, real-time updates, or background processing that don't belong inside a handler function.",
+      },
+      {
+        type: "paragraph",
+        text: "The fix that has held up for me is a strict layer boundary, with dependencies pointing in one direction only:",
+      },
+      {
+        type: "code",
+        code: `internal/
+  handler/     HTTP layer (Fiber routes, request/response mapping)
+  usecase/     business logic, orchestrates the work
+  repository/  data access, talks to Postgres/Redis/etc.
+  domain/      core types + the interfaces everything else depends on`,
+      },
+      {
+        type: "paragraph",
+        text: "The rule that makes this pay off: usecases depend on interfaces defined in domain, never on concrete repository structs. A handler calls a usecase; a usecase calls a repository interface. Nothing outer leaks into something inner.",
+      },
+      {
+        type: "code",
+        code: `// domain/user.go
+type UserRepository interface {
+    FindByID(ctx context.Context, id string) (*User, error)
+    Save(ctx context.Context, u *User) error
+}
+
+// usecase/user.go
+type UserUsecase struct {
+    repo domain.UserRepository
+}
+
+func (uc *UserUsecase) GetProfile(ctx context.Context, id string) (*User, error) {
+    return uc.repo.FindByID(ctx, id)
+}`,
+      },
+      {
+        type: "paragraph",
+        text: "At this point it looks like ceremony for a simple lookup. The value shows up once you need to add something across a layer boundary — caching is the clearest example. Because the usecase only knows about the UserRepository interface, I can wrap the Postgres implementation in a decorator that checks Redis first, and nothing above it changes:",
+      },
+      {
+        type: "code",
+        code: `// repository/cached_user.go
+type CachedUserRepository struct {
+    inner domain.UserRepository
+    cache *redis.Client
+}
+
+func (r *CachedUserRepository) FindByID(ctx context.Context, id string) (*User, error) {
+    if raw, err := r.cache.Get(ctx, "user:"+id).Result(); err == nil {
+        return decodeUser(raw), nil
+    }
+    user, err := r.inner.FindByID(ctx, id)
+    if err == nil {
+        r.cache.Set(ctx, "user:"+id, encodeUser(user), 5*time.Minute)
+    }
+    return user, err
+}`,
+      },
+      {
+        type: "paragraph",
+        text: "Swap CachedUserRepository in where the plain one used to be wired up, and the usecase and handler are completely unaware caching exists. Same story for rate limiting a hot endpoint — it wraps the repository or sits in middleware, not scattered through business logic.",
+      },
+      {
+        type: "paragraph",
+        text: "Real-time features get the same treatment. A usecase that changes state — a new comment, a new notification — publishes a domain event through an interface, not through a specific transport:",
+      },
+      {
+        type: "code",
+        code: `type EventPublisher interface {
+    Publish(ctx context.Context, event DomainEvent)
+}`,
+      },
+      {
+        type: "paragraph",
+        text: "Whatever sits behind that interface — an in-memory hub pushing Server-Sent Events, a Redis pub/sub fan-out, a WebSocket broadcaster — the usecase layer doesn't know or care. I've swapped the transport under this interface more than once without touching a single usecase.",
+      },
+      {
+        type: "paragraph",
+        text: "The same pattern covers background work: an image or video upload triggers a usecase call to a MediaProcessor interface, and the concrete implementation (compress, resize, generate a preview) runs on its own without the HTTP handler waiting on it or knowing how it happens.",
+      },
+      {
+        type: "paragraph",
+        text: "The lesson that stuck with me: Clean Architecture isn't about the folder names. It's about making the boundary interfaces the only thing layers know about each other, so caching, real-time delivery, and background processing can be bolted on as the product grows — instead of rewriting the core business logic every time a new cross-cutting concern shows up.",
+      },
+    ],
   },
   {
     id: "jwt-auth-flow",
