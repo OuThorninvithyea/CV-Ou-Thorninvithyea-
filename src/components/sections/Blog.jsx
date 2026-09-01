@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, FileEdit, Tag } from "lucide-react";
+import { Calendar, Clock, FileEdit, FileText, Tag } from "lucide-react";
 import { blogPosts } from "../../data/blog";
 
 const COLORS = [
@@ -10,6 +10,32 @@ const COLORS = [
   "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400",
   "bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400",
 ];
+
+const ArticleBody = ({ content }) => (
+  <div className="mt-5 space-y-4 border-t border-slate-100 dark:border-slate-800 pt-5">
+    {content.map((block, index) => {
+      if (block.type === "code") {
+        return (
+          <pre
+            key={`${block.type}-${index}`}
+            className="overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-100"
+          >
+            <code>{block.code}</code>
+          </pre>
+        );
+      }
+
+      return (
+        <p
+          key={`${block.type}-${index}`}
+          className="text-sm leading-relaxed text-slate-600 dark:text-slate-400"
+        >
+          {block.text}
+        </p>
+      );
+    })}
+  </div>
+);
 
 const Blog = () => {
   const allTags = [...new Set(blogPosts.flatMap((post) => post.tags))].sort();
@@ -43,7 +69,7 @@ const Blog = () => {
         viewport={{ once: true }}
         className="text-slate-600 dark:text-slate-400 mb-8 max-w-2xl"
       >
-        Draft topics on software engineering, architecture patterns, and tools I work with.
+        Notes on software engineering, architecture patterns, and tools I work with.
       </motion.p>
 
       <div className="flex flex-wrap gap-2 mb-10">
@@ -59,52 +85,60 @@ const Blog = () => {
       </div>
 
       <div className="space-y-5">
-        {blogPosts.map((post, i) => (
-          <motion.article
-            key={post.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            viewport={{ once: true }}
-            className="group p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
-          >
-            <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-3">
-              <span className="flex items-center gap-1">
-                <Calendar size={12} />
-                {post.date}
-              </span>
-              <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600" />
-              <span className="flex items-center gap-1">
-                <Clock size={12} />
-                {post.readTime}
-              </span>
-            </div>
+        {blogPosts.map((post, i) => {
+          const isArticle = Boolean(post.content?.length);
+          const StatusIcon = isArticle ? FileText : FileEdit;
+          const statusLabel = isArticle ? "Article" : "Draft";
 
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-              {post.title}
-            </h3>
-
-            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-              {post.excerpt}
-            </p>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="flex flex-wrap gap-1.5">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded text-xs font-mono"
-                  >
-                    {tag}
-                  </span>
-                ))}
+          return (
+            <motion.article
+              key={post.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              viewport={{ once: true }}
+              className="group p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
+            >
+              <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-3">
+                <span className="flex items-center gap-1">
+                  <Calendar size={12} />
+                  {post.date}
+                </span>
+                <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600" />
+                <span className="flex items-center gap-1">
+                  <Clock size={12} />
+                  {post.readTime}
+                </span>
               </div>
-              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium flex items-center gap-1 ml-auto">
-                <FileEdit size={12} /> Draft
-              </span>
-            </div>
-          </motion.article>
-        ))}
+
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                {post.title}
+              </h3>
+
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                {post.excerpt}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded text-xs font-mono"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-xs text-slate-500 dark:text-slate-400 font-medium flex items-center gap-1 ml-auto">
+                  <StatusIcon size={12} /> {statusLabel}
+                </span>
+              </div>
+
+              {isArticle && <ArticleBody content={post.content} />}
+            </motion.article>
+          );
+        })}
       </div>
     </section>
   );

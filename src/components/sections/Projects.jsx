@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowUpRight, Folder } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight, Folder, CheckCircle } from "lucide-react";
 import { projects } from "../../data/projects";
 
 const ProjectVideo = ({ src, poster, title }) => {
@@ -156,7 +156,7 @@ const Projects = () => {
                     className="text-slate-300 dark:text-slate-600 flex-shrink-0 opacity-0 translate-x-1 -translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300"
                   />
                 </div>
-                <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2 leading-relaxed">
+                <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-3 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -175,6 +175,20 @@ const Projects = () => {
                     </span>
                   )}
                 </div>
+
+                {project.features?.length > 0 && (
+                  <ul className="space-y-2 mb-4">
+                    {project.features.slice(0, 2).map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-400"
+                      >
+                        <CheckCircle className="w-3.5 h-3.5 text-primary-500 flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <div className="flex flex-wrap gap-2 pt-3 border-t border-slate-100 dark:border-slate-800">
                   {project.webDemo && (

@@ -1,6 +1,30 @@
-import { Code, Zap, Database } from "lucide-react";
+import { Code, Zap, Database, Layers } from "lucide-react";
 
 export const projects = [
+  {
+    title: "Full-Stack Social & E-Learning Platform",
+    description:
+      "Team contribution to a multi-product startup ecosystem — a social feed with real-time notifications, an e-learning marketplace with course authoring and checkout, and cross-platform mobile apps, all backed by a shared Go API and PostgreSQL. Focused on real-time delivery, media processing, and caching at scale. Codebase is private; details available on request.",
+    technologies: [
+      "Go",
+      "Fiber",
+      "PostgreSQL",
+      "Redis",
+      "Nuxt.js",
+      "Flutter",
+      "Dart",
+      "Server-Sent Events",
+      "Docker",
+    ],
+    features: [
+      "Real-time notifications via Server-Sent Events",
+      "Cross-platform mobile app in Flutter with web feature parity",
+      "Redis caching & rate limiting for high-traffic endpoints",
+      "Image/video upload pipeline with compression & normalization",
+    ],
+    icon: <Layers className="w-6 h-6" />,
+    gradient: "from-cyan-400 to-blue-600",
+  },
   {
     title: "bongthom Admin API",
     description:

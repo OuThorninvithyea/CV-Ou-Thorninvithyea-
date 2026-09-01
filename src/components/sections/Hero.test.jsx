@@ -11,5 +11,9 @@ describe("Hero", () => {
       "href",
       "/assets/outhornnivithyea_cv.pdf",
     );
+    expect(screen.getByRole("img", { name: /portrait of ou thorninvithyea/i })).toHaveAttribute(
+      "src",
+      "/assets/profile/ou-thorninvithyea.jpg",
+    );
   });
 });
