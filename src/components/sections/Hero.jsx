@@ -11,7 +11,7 @@ const HERO_CARDS = [
 const HERO_SOCIAL_LINKS = [
   { icon: <Github size={18} />, href: "https://github.com/OuThorninvithyea?tab=repositories", label: "GitHub" },
   { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/ou-thornin-vithyea-256950389", label: "LinkedIn" },
-  { icon: <Mail size={18} />, href: "mailto:Vithyeasa@gmail.com", label: "Email" },
+  { icon: <Mail size={18} />, href: "mailto:vithyeass@gmail.com", label: "Email" },
 ];
 
 const CV_PDF_PATH = "/assets/outhornnivithyea_cv.pdf";
@@ -47,7 +47,7 @@ const Hero = () => {
               Download CV
             </a>
             <a
-              href="mailto:Vithyeasa@gmail.com"
+              href="mailto:vithyeass@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg font-medium hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors text-sm"
             >
               <Mail size={16} />

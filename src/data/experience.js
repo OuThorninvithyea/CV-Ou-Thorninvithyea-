@@ -10,7 +10,8 @@ export const experience = [
     achievements: [
       "Building backend APIs with Go and Fiber framework",
       "Designing PostgreSQL databases with connection pooling for high-concurrency scenarios",
-      "Developing web interfaces with Nuxt.js (Vue 3), HTML, and JavaScript",
+      "Building a Nuxt 4 (Vue 3) mobile-first social web app — feed, stories, posts, profiles, and video — with Pinia and Tailwind CSS 4",
+      "Running performance audits on the Nuxt single-page app to find and fix slow loads and rendering",
       "Building cross-platform mobile apps with Flutter/Dart, keeping feature parity with the web client",
       "Implementing real-time features with Server-Sent Events (SSE) for live notifications and social interactions",
       "Adding Redis-based caching and rate limiting to improve API performance and reliability",
