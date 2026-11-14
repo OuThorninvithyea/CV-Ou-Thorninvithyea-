@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin, CheckCircle, Loader2 } fro
 import { EMAILJS_CONFIG } from "../../config/emailjs";
 
 const CONTACT_INFO = [
-  { icon: <Mail className="w-5 h-5" />, title: "Email", value: "Vithyeasa@gmail.com", link: "mailto:Vithyeasa@gmail.com" },
+  { icon: <Mail className="w-5 h-5" />, title: "Email", value: "vithyeass@gmail.com", link: "mailto:vithyeass@gmail.com" },
   { icon: <Phone className="w-5 h-5" />, title: "Phone", value: "+855 11 423 735", link: "tel:+85511423735" },
   { icon: <MapPin className="w-5 h-5" />, title: "Location", value: "Phnom Penh, Cambodia", link: "https://maps.google.com/?q=Phnom+Penh,+Cambodia" },
 ];

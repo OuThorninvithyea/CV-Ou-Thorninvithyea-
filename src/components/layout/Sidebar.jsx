@@ -13,7 +13,7 @@ const socialLinks = [
   { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/ou-thornin-vithyea-256950389", label: "LinkedIn" },
   {
     icon: <Mail size={18} />,
-    href: "mailto:Vithyeasa@gmail.com",
+    href: "mailto:vithyeass@gmail.com",
     label: "Email",
   },
 ];

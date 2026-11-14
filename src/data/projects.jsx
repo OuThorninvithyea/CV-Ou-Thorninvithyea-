@@ -2,6 +2,27 @@ import { Code, Zap, Database, Layers } from "lucide-react";
 
 export const projects = [
   {
+    title: "Condo Booking System",
+    description:
+      "Hourly booking system for my own condo in Phnom Penh, currently in progress and running on a test server. Guests book on the website with no account, pay a Bakong KHQR code for the exact amount through CutLuy, and receive a time-limited door code on Telegram once the payment is confirmed. Codebase is private; details available on request.",
+    technologies: [
+      "Go",
+      "Nuxt 4",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Telegram Bot API",
+      "Docker",
+    ],
+    features: [
+      "Database constraints that block overlapping bookings",
+      "Bakong KHQR checkout with signature-verified payment webhook and a reconcile job for missed ones",
+      "Encrypted, time-limited door code sent to the guest on Telegram",
+      "Smart-lock integration and owner dashboard in progress",
+    ],
+    icon: <Layers className="w-6 h-6" />,
+    gradient: "from-rose-400 to-orange-500",
+  },
+  {
     title: "Full-Stack Social & E-Learning Platform",
     description:
       "Team contribution to a multi-product startup ecosystem — a social feed with real-time notifications, an e-learning marketplace with course authoring and checkout, and cross-platform mobile apps, all backed by a shared Go API and PostgreSQL. Focused on real-time delivery, media processing, and caching at scale. Codebase is private; details available on request.",
